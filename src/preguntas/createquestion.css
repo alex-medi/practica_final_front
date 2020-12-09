@@ -1,0 +1,25 @@
+.pregunta {
+    border: 2px solid black;
+    border-radius: 4px;
+    margin: 10px;
+    padding: 20px;
+    position: relative;
+    text-align: center;
+    height: 155px;
+    width: 300px;
+    background-color: olive;
+}
+.cuerpo{
+   height: 100px;
+   
+}
+  
+.pregunta label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.pregunta button {
+    background-color: goldenrod;
+}

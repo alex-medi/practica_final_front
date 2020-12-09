@@ -1,0 +1,9 @@
+.tematic-column{
+  cursor: pointer;
+}
+
+.tematicas .active{
+    text-decoration: underline;
+    font: bold;
+    
+}
