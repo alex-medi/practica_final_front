@@ -8,12 +8,12 @@ function Respuestas() {
     
   const [text, setText] = useState('')
     
-  const me = useUser();
+  const experto = useUser();
   const id = useAskSelectedAsk();
   
   const handleSubmit = async e => {
     e.preventDefault()
-    await respuesta(id, text, me.token);
+    await respuesta(id, text, experto);
     
   }
 

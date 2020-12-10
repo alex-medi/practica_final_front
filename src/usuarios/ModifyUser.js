@@ -2,23 +2,24 @@ import { useState } from 'react'
 import './modifyuser.css';
 import { Link } from 'react-router-dom';
 import { edit } from '../api'
-import {useUser} from './UserContext';
+import {useUser, useSetUser} from './UserContext';
 function ModifyUser() {
     const me = useUser();
-    console.log(me)
-  const nombre = useState(me.nombre)
-  const email = useState(me.email)
+    const setMe = useSetUser()
+  
   const [login, setLogin] = useState(''|| me.login)
   const [password, setPassword] = useState('')
-  const [experto, setExperto] = useState('')
+  const [experto, setExperto] = useState('si')
   const [empresa, setEmpresa] = useState('' || me.empresa)
+    
   
-  
-
   const handleSubmit = async e => {
     e.preventDefault()
-    await edit(me.id, login, password, experto === 'si', empresa, me.token);
+    const data = await edit(me.id, login, password, experto === 'si', empresa, me.token);
     
+    if(data.token) {
+      setMe(data)
+  }
 
   }
 
@@ -28,22 +29,23 @@ function ModifyUser() {
       <form onSubmit={handleSubmit}>
         <label>
           Nombre:
-          <label>{nombre}</label>
+          <label>{me.nombre}</label>
         </label>
         <label>
           Email:
-          <label>{email}</label>
+          <label>{me.email}</label>
         </label>
         <label>
           Nombre de usuario actual:
-          <label>{login}</label>
+          <label>{me.login}</label>
         </label>
         <label>
           Nuevo nombre de usuario:
           <input type="text" value={login} onChange={e => setLogin(e.target.value)} />
         </label>
+        
         <label>
-          Nueva contraseña:
+          Introducir nueva contraseña:
           <input type="password" value={password} onChange={e => setPassword(e.target.value)} />
         </label>
         <label>
@@ -55,7 +57,7 @@ function ModifyUser() {
         </label>
         <label>
           Empresa actual:
-          <label>{empresa}</label>
+          <label>{me.empresa}</label>
         </label>
         <label>
         Nueva Empresa:

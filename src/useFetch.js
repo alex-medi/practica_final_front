@@ -1,26 +1,20 @@
 import { useState, useEffect } from 'react'
-import { useUser } from './usuarios/UserContext';
-
+import { useUser } from './usuarios/UserContext'
 
 function useFetch(url) {
-    const [data, setData] = useState();
-    const me = useUser()
-    
-    useEffect(() => {
-       fetch(url, {
-          headers: { 'Authorization': 'Bearer ' + me.token }
-       })
-            .then(res => res.json())
-            .then(d => setData(d))
+  const [data, setData] = useState()
+  const me = useUser()
+  const token = me && me.token
 
-    },[url, me.token])
+  useEffect(() => {
+    fetch(url, {
+      headers: token && { 'Authorization': 'Bearer ' + token }
+    })
+      .then(res => res.json())
+      .then(t => setData(t))
+  }, [url, token])
 
-    return (
-               
-       data
-           
-    )
-
+  return data
 }
 
-export default useFetch;
+export default useFetch

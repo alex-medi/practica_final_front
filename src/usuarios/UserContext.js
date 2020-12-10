@@ -2,7 +2,7 @@ import React, {useContext, useState} from 'react'
 const userContext = React.createContext();
 
 const UserProvider = ({children}) => {
-    const session = JSON.parse(localStorage.getItem('session'))
+    const session = JSON.parse(localStorage.getItem('session')) || undefined
 
     const [me, setMe] = useState(session)
 

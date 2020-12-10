@@ -1,11 +1,12 @@
 import {usePreguntaById} from '../api'
-import {useAskSelectedAsk} from '../SelectedAsk'
+
+import { useParams } from 'react-router-dom';
 
 function AnswerViewer() {
-
-  const  id  = useAskSelectedAsk()
   
-  const respuestas = usePreguntaById(id)
+  const selectedQuestion = parseInt(useParams().idPregunta || "1")
+  
+  const respuestas = usePreguntaById(selectedQuestion)
   if (!respuestas || respuestas.error) return null
     
   return (
@@ -14,7 +15,7 @@ function AnswerViewer() {
         <ul className="pregunta-lista">
             {respuestas && respuestas.map(respuesta =>
                 
-                <li className={id === respuesta.id_pregunta}>
+                <li className={selectedQuestion === respuesta.id_pregunta}>
                     <>
                      
                       <ul>
