@@ -6,10 +6,11 @@ function AnswerViewer() {
   const  id  = useAskSelectedAsk()
   
   const respuestas = usePreguntaById(id)
+  if (!respuestas || respuestas.error) return null
     
   return (
    <>
-        <h4>Respuestas</h4>
+        <h4>Respuesta</h4>
         <ul className="pregunta-lista">
             {respuestas && respuestas.map(respuesta =>
                 
@@ -17,7 +18,7 @@ function AnswerViewer() {
                     <>
                      
                       <ul>
-                        <li>{respuesta.cuerpo}</li>
+                        <li>{respuesta.descripcion}</li>
                         <li>{respuesta.fecha_respuesta}</li>
                       </ul>
                        

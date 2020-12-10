@@ -5,19 +5,19 @@ import { login } from "../api";
 
 function Login() {
   const setMe = useSetUser()
-   
-  const [useremail, setUseremail] = useState('');
+    
+  const [userEmail, setUserEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [isError, setError] = useState(false);
+  const [error, setError] = useState();
 
   const handleSubmit = async e => {
       e.preventDefault()
-      const data = await login(useremail, password)
+      const data = await login(userEmail, password)
       
       if(data.token) {
           setMe(data)
       }else{
-         setError(true)
+         setError(data.error || true)
       }
   }
   
@@ -26,15 +26,15 @@ function Login() {
         <form onSubmit={handleSubmit}>
            <label>
                Usuario:
-               <input value={useremail} onChange={e => setUseremail(e.target.value)} />
+               <input value={userEmail} onChange={e => setUserEmail(e.target.value)} />
            </label>
            <label>
                Contraseña:
                <input type='password' value={password} onChange={e => setPassword(e.target.value)} />
            </label>
-           {isError &&
+           {error &&
              <div className='error'>
-                 Usuario o contraseña incorrectos
+                 {error}
              </div>
            }
            <button>Iniciar sesion</button>

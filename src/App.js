@@ -7,8 +7,8 @@ import Header from './Header';
 import { useUser } from './usuarios/UserContext';
 import Register from './usuarios/Register';
 import ModifyUser from './usuarios/ModifyUser';
-import Acordeon2 from './usuarios/Acordeon2';
-import AnswerViewer from './preguntas/AnswerViewer';
+
+import { Switch, Route, Link } from 'react-router-dom';
 
 function App() {
   
@@ -17,18 +17,22 @@ function App() {
   const [isLogged, setLogged] = useState(false)
 
   if(!me) return(
+    
      <>
     {isLogged ? <Register /> : <Login />}
     <div className="logged" onClick={() => setLogged(!isLogged)}>
     {isLogged ? 'Acceder' : '¿Aún no tienes cuenta? Registrate'}
     </div>
     </>
+    
   ) 
   
   return (
     <div className="App">
       
         <Header />
+        <Switch>
+        <Route path="/temas">
         <div className="columna">
          <aside className="temas-list">       
         <Tema />
@@ -36,15 +40,26 @@ function App() {
       <main className="preguntas-list">
         
         <AskViewer />
-        <AnswerViewer />
+        
       </main>
-      <div>
-        <Acordeon2>
+            
+      </div>
+      </Route>
+      <Route path="/editar perfil">
+        <div>
         <ModifyUser />
-        </Acordeon2>
+        
       </div>
+      </Route>   
+      <Route path="/">
+            <div className="page">
+            <h2>Inicio</h2>
+            <Link to="/temas">Tematicas</Link>
+            </div>
+          </Route>
+      </Switch>
+          
       
-      </div>
       </div>
     
   );

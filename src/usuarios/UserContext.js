@@ -2,9 +2,16 @@ import React, {useContext, useState} from 'react'
 const userContext = React.createContext();
 
 const UserProvider = ({children}) => {
-    const [me, setMe] = useState()
+    const session = JSON.parse(localStorage.getItem('session'))
+
+    const [me, setMe] = useState(session)
+
+    const setMeBis = v =>{
+        localStorage.setItem('session', v ? JSON.stringify(v) : null)
+        setMe(v)
+    }
     return (
-        <userContext.Provider value ={{me, setMe}}>
+        <userContext.Provider value ={{me, setMe: setMeBis}}>
 
         {children}
         </userContext.Provider>

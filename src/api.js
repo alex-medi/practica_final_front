@@ -8,11 +8,11 @@ export const useTemaById = (id) => useFetch('http://localhost:8080/api/preguntas
 
 export const usePreguntaById = (id) => useFetch('http://localhost:8080/api/respuestas/'+ id)
 
-export const login = async (email, password) => {
+export const login = async (login, password) => {
     const ret = await fetch('http://localhost:8080/api/usuarios/login', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email, password })
+          body: JSON.stringify({ login, password })
       })
       const data = await ret.json()
       return data
@@ -60,4 +60,6 @@ export const register = async (nombre, email, login, password, experto, empresa)
     const data = await ret.json()
     return data
   }
+
+  
   

@@ -1,15 +1,17 @@
 import { useState } from 'react'
 import './modifyuser.css';
-
+import { Link } from 'react-router-dom';
 import { edit } from '../api'
 import {useUser} from './UserContext';
 function ModifyUser() {
     const me = useUser();
     console.log(me)
-  const [login, setLogin] = useState(me.login)
+  const nombre = useState(me.nombre)
+  const email = useState(me.email)
+  const [login, setLogin] = useState(''|| me.login)
   const [password, setPassword] = useState('')
-  const [experto, setExperto] = useState(me.experto)
-  const [empresa, setEmpresa] = useState(me.empresa)
+  const [experto, setExperto] = useState('')
+  const [empresa, setEmpresa] = useState('' || me.empresa)
   
   
 
@@ -22,9 +24,22 @@ function ModifyUser() {
 
   return (
     <div className="edit">
+      <div className="formulario">
       <form onSubmit={handleSubmit}>
         <label>
-          Nuevo login:
+          Nombre:
+          <label>{nombre}</label>
+        </label>
+        <label>
+          Email:
+          <label>{email}</label>
+        </label>
+        <label>
+          Nombre de usuario actual:
+          <label>{login}</label>
+        </label>
+        <label>
+          Nuevo nombre de usuario:
           <input type="text" value={login} onChange={e => setLogin(e.target.value)} />
         </label>
         <label>
@@ -39,14 +54,24 @@ function ModifyUser() {
          </select>
         </label>
         <label>
-        Empresa:
+          Empresa actual:
+          <label>{empresa}</label>
+        </label>
+        <label>
+        Nueva Empresa:
           <input type="text" value={empresa} onChange={e => setEmpresa(e.target.value)} />
         </label>
         
         <button>Guardar Cambios</button>
-        
+                         
       </form>
+      </div>
+      <div>
+     <Link to="/">Volver a inicio</Link>
+    </div>       
+    
     </div>
+    
   );
 }
 

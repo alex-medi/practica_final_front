@@ -2,6 +2,8 @@
 import './Tema.css';
 import { useTemaSelectedTema,useTemaSetSelectedTema } from './SelectedTema';
 import { useTemaList } from './api';
+import { Link } from 'react-router-dom';
+
 function Tema (){
     const selectedTema = useTemaSelectedTema();
     const setSelectedTema = useTemaSetSelectedTema();
@@ -22,6 +24,10 @@ function Tema (){
                 )}
 
            </ul>
+
+           <a>
+           <Link to="/">Volver a inicio</Link>
+           </a>
        </div>
 
     )

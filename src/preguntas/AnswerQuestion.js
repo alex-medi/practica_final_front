@@ -10,6 +10,7 @@ function Respuestas() {
     
   const me = useUser();
   const id = useAskSelectedAsk();
+  
   const handleSubmit = async e => {
     e.preventDefault()
     await respuesta(id, text, me.token);

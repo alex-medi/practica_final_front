@@ -1,8 +1,9 @@
 import {useTemaById} from '../api';
 import {useTemaSelectedTema} from '../SelectedTema';
 import { useAskSelectedAsk, useAskSetSelectedAsk } from '../SelectedAsk'
-import CreateQuestion from './CreateQuestion';
+import CreateQuestion from './CreateQuestion'
 import AnswerQuestion from './AnswerQuestion'
+import AnswerViewer from './AnswerViewer'
 import New_Ask from './Acordeon_P';
 import New_Answer from './Acordeon_R';
 
@@ -14,7 +15,7 @@ function AskViewer(){
 
     const preguntas = useTemaById(id);
 
-    if(!preguntas) return 'Selecciona una temática'    
+    if(!preguntas || preguntas.error) return 'Selecciona una temática'    
 
     return(
         <>
@@ -29,7 +30,10 @@ function AskViewer(){
                         <article>{pregunta.cuerpo}</article>
                         <span>{pregunta.fecha_consulta}</span>
                         <div>
-                        <button className={selectedAsk===pregunta.id ? 'active' : ''} onClick={() => setSelectedAsk(pregunta.id)} key={pregunta.id}>Ver respuestas</button>
+                        <button className={selectedAsk===pregunta.id ? 'active' : ''} onClick={() => setSelectedAsk(pregunta.id)} key={pregunta.id}>Ver respuesta</button>
+                        </div>
+                        <div>
+                        <AnswerViewer />
                         </div>
                       </div>
                       

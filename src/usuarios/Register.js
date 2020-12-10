@@ -12,7 +12,7 @@ function Register() {
   const [password, setPassword] = useState('')
   const [experto, setExperto] = useState('')
   const [empresa, setEmpresa] = useState('')
-  const [isError, setError] = useState(false)
+  const [error, setError] = useState()
 
   const handleSubmit = async e => {
     e.preventDefault()
@@ -20,7 +20,7 @@ function Register() {
     if (data.token) {
       setMe(data)
     } else {
-      setError(true)
+      setError(data.error || true)
     }
   }
 
@@ -46,17 +46,17 @@ function Register() {
         <label>
           ¿Eres experto?:
           <select value={experto} onChange={e => setExperto(e.target.value)}>
-               <option className="si">Si</option>
                <option className="no">No</option>
+               <option className="si">Si</option>
          </select>
         </label>
         <label>
           ¿Cual es tu empresa?:
           <input type="text" value={empresa} onChange={e => setEmpresa(e.target.value)} />
         </label>
-        {isError &&
+        {error &&
           <div className="error">
-            Error de registro
+            {error}
           </div>
         }
         <button>Registrarse</button>
