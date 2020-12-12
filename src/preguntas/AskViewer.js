@@ -9,9 +9,9 @@ import { Link, useParams } from 'react-router-dom';
 
 function AskViewer() {
     const me = useUser()
-    
+
     const selectedTema = parseInt(useParams().idTema || "1")
-    
+
     const preguntas = useTemaById(selectedTema);
 
     if (!preguntas || preguntas.error) return 'Selecciona una temática'
@@ -23,32 +23,35 @@ function AskViewer() {
                 {preguntas && preguntas.map(pregunta =>
 
                     <li className={selectedTema === pregunta.id_tematica}>
-                        <>  
+                        <>
                             <Link to={'/temas/' + pregunta.id_tematica + '/pregunta/' + pregunta.id}>
-                            <h4>{pregunta.titulo}</h4>
+                                <h4>{pregunta.titulo}</h4>
                             </Link>
                             <div>
                                 <article>{pregunta.cuerpo}</article>
                                 <span>{pregunta.fecha_consulta}</span>
-                                                                
+
                             </div>
 
                             {me.experto === 1 &&
-                                <New_Answer>
-                                    <AnswerQuestion />
-                                </New_Answer>
+                                <Link to={'/temas/' + pregunta.id_tematica + '/pregunta/' + pregunta.id + '/responder'}>
+                                    <button>Responder esta pregunta</button>
+                                </Link>
                             }
                         </>
+                        <div>
+                        <Link to={'/temas/' + pregunta.id_tematica + '/new-question'}>
+                            <button>Crear nueva pregunta</button>
+                        </Link>
+                    </div>
                     </li>
+
+                    
 
                 )}
 
             </ul>
-            <div>
-                <New_Ask>
-                    <CreateQuestion />
-                </New_Ask>
-            </div>
+
         </>
     )
 

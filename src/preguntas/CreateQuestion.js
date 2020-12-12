@@ -1,23 +1,24 @@
 import { useState } from 'react'
 import './createquestion.css';
-
+import { useParams } from 'react-router-dom';
 import { pregunta } from '../api'
 import {useUser} from '../usuarios/UserContext';
-import {useTemaSelectedTema} from '../SelectedTema';
+import Auth from '../Auth';
+
 function Preguntas() {
  
   const [title, setTitle] = useState('')
   const [text, setText] = useState('')
-  
-  
+   
   const me = useUser();
-  const id = useTemaSelectedTema()
+      
 
+  const selectedTema = parseInt(useParams().idTema || "1")
+  if (!me) return <Auth />
   const handleSubmit = async e => {
     e.preventDefault()
-    await pregunta(id, title, text, me.token);
+    await pregunta(selectedTema, title, text, me.token);
     
-
   }
 
   return (

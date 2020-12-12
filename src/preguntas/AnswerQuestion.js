@@ -3,17 +3,18 @@ import './respuesta.css';
 
 import { respuesta } from '../api'
 import {useUser} from '../usuarios/UserContext';
-import {useAskSelectedAsk} from '../SelectedAsk'
+
+import { useParams } from 'react-router-dom';
 function Respuestas() {
     
   const [text, setText] = useState('')
-    
-  const experto = useUser();
-  const id = useAskSelectedAsk();
   
+  const experto = useUser();
+  const selectedQuestion = parseInt(useParams().idPregunta || "1")
+    
   const handleSubmit = async e => {
     e.preventDefault()
-    await respuesta(id, text, experto);
+    await respuesta(selectedQuestion, text, experto);
     
   }
 

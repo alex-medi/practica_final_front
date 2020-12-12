@@ -39,11 +39,11 @@ export const register = async (nombre, email, login, password, experto, empresa)
     return data
   }
 
-  export const respuesta = async (id, descripcion, token) => {
+  export const respuesta = async (id, descripcion, experto) => {
     
     const ret = await fetch('http://hab.trek-quest.com/users/'+id, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + token },
+      headers: { 'Content-Type': 'application/json', 'Authorization': experto },
       body: JSON.stringify({ descripcion })
     })
     const data = await ret.json()

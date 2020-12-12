@@ -1,10 +1,14 @@
-.topbar {
+header {
   flex: 0 0 35px;
   background-color: tomato;
-  border-bottom: 1px solid black;
+  border-bottom: 2px solid black;
   padding: 5px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  align-items: center;
+  height: 38px;
+  width: 100%;
+ 
 }
 
 

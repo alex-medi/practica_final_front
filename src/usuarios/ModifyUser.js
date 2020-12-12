@@ -1,16 +1,20 @@
 import { useState } from 'react'
 import './modifyuser.css';
-import { Link } from 'react-router-dom';
 import { edit } from '../api'
 import {useUser, useSetUser} from './UserContext';
+import { Link } from 'react-router-dom';
+import Auth from '../Auth'
+
 function ModifyUser() {
     const me = useUser();
+
     const setMe = useSetUser()
   
-  const [login, setLogin] = useState(''|| me.login)
+  const [login, setLogin] = useState(me && me.login || '')
   const [password, setPassword] = useState('')
   const [experto, setExperto] = useState('si')
-  const [empresa, setEmpresa] = useState('' || me.empresa)
+  const [empresa, setEmpresa] = useState(me && me.empresa ||'')
+  if (!me) return <Auth />
     
   
   const handleSubmit = async e => {
@@ -68,10 +72,11 @@ function ModifyUser() {
                          
       </form>
       </div>
+
       <div>
-     <Link to="/">Volver a inicio</Link>
-    </div>       
-    
+        <Link to="/temas" >Volver a los temas</Link>
+      </div>
+         
     </div>
     
   );

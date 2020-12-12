@@ -9,12 +9,12 @@ function Header (){
 
     return(
         //para que los usuarios tengan foto de perfil
-       <header className='topbar'>
+       <header>
           
        <span className="a">{me && me.login}</span>
         
         <div>
-            <Link to="/editar-perfil">Ver/Editar perfil</Link>
+            <Link to="/user/editar-perfil">Ver/Editar perfil</Link>
         </div>
 
         <button onClick={() => setMe()}>Cerrar cesion</button> 
