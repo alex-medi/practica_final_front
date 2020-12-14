@@ -33,15 +33,15 @@ function ModifyUser() {
       <form onSubmit={handleSubmit}>
         <label>
           Nombre:
-          <label>{me.nombre}</label>
+          <label className="invariable">{me.nombre}</label>
         </label>
         <label>
           Email:
-          <label>{me.email}</label>
+          <label className="invariable">{me.email}</label>
         </label>
         <label>
           Nombre de usuario actual:
-          <label>{me.login}</label>
+          <label className="alinear">{me.login}</label>
         </label>
         <label>
           Nuevo nombre de usuario:
@@ -54,14 +54,14 @@ function ModifyUser() {
         </label>
         <label>
           experto:
-          <select value={experto} onChange={e => setExperto(e.target.value)}>
+          <select className="alinear" value={experto} onChange={e => setExperto(e.target.value)}>
                <option value="si">Si</option>
                <option value="no">No</option>
          </select>
         </label>
         <label>
           Empresa actual:
-          <label>{me.empresa}</label>
+          <label className="alinear">{me.empresa}</label>
         </label>
         <label>
         Nueva Empresa:
@@ -73,8 +73,8 @@ function ModifyUser() {
       </form>
       </div>
 
-      <div>
-        <Link to="/temas" >Volver a los temas</Link>
+      <div className="volver">
+        <Link className="vuelve" to="/temas" >Volver a los temas</Link>
       </div>
          
     </div>

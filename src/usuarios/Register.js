@@ -27,33 +27,25 @@ function Register() {
   return (
     <div className="registro">
       <form onSubmit={handleSubmit}>
+                   
+          <input placeholder="nombre" value={username} onChange={e => setUsername(e.target.value)} />
+               
+         <input placeholder="email" type="email" value={email} onChange={e => setEmail(e.target.value)} />
+                 
+         <input placeholder="nombre de usuario" type="login" value={login} onChange={e => setLogin(e.target.value)} />
+               
+        <input placeholder="contraseña" type="password" value={password} onChange={e => setPassword(e.target.value)} />
+        
         <label>
-          Username:
-          <input value={username} onChange={e => setUsername(e.target.value)} />
-        </label>
-        <label>
-          Email:
-          <input type="email" value={email} onChange={e => setEmail(e.target.value)} />
-        </label>
-        <label>
-          Login:
-          <input type="login" value={login} onChange={e => setLogin(e.target.value)} />
-        </label>
-        <label>
-          Password:
-          <input type="password" value={password} onChange={e => setPassword(e.target.value)} />
-        </label>
-        <label>
-          ¿Eres experto?:
-          <select value={experto} onChange={e => setExperto(e.target.value)}>
+          ¿Eres experto?
+          <select className="experiencia" value={experto} onChange={e => setExperto(e.target.value)}>
                <option className="no">No</option>
                <option className="si">Si</option>
          </select>
         </label>
-        <label>
-          ¿Cual es tu empresa?:
-          <input type="text" value={empresa} onChange={e => setEmpresa(e.target.value)} />
-        </label>
+                  
+          <input placeholder="empresa" type="text" value={empresa} onChange={e => setEmpresa(e.target.value)} />
+        
         {error &&
           <div className="error">
             {error}

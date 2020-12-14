@@ -24,14 +24,12 @@ function Login() {
   return (
     <div className='login'>
         <form onSubmit={handleSubmit}>
-           <label>
-               Usuario:
-               <input value={userEmail} onChange={e => setUserEmail(e.target.value)} />
-           </label>
-           <label>
-               Contraseña:
-               <input type='password' value={password} onChange={e => setPassword(e.target.value)} />
-           </label>
+                         
+               <input placeholder="usuario/email" value={userEmail} onChange={e => setUserEmail(e.target.value)} />
+                   
+               
+               <input placeholder="contraseña" type='password' value={password} onChange={e => setPassword(e.target.value)} />
+           
            {error &&
              <div className='error'>
                  {error}

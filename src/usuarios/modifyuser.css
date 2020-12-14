@@ -1,21 +1,66 @@
 .edit {
-    border: 1px solid black;
-    border-radius: 4px;
+    border: 2px solid black;
+    border-radius: 15px;
     margin: 10px;
     padding: 20px;
-    position: relative;
-    text-align: center;
-    height: 320px;
-    width: 400px;
-    background-color: burlywood;
+    height: 370px;
+    width: 420px;
+    background-color: darksalmon;
+    margin: auto;
+    margin-top: 15vh;
 }
   
 .edit label {
     display: flex;
     justify-content: space-between;
+    text-align: start;
     margin-bottom: 10px;
+    
+}
+
+.edit input {
+    border-radius: 15px;
+    border: 2px solid black;
+    margin-bottom: 12px;
 }
 
 .edit button {
-    background-color: lightseagreen;
+    background-color: lawngreen;
+    margin-top: 20px;
+    margin-top: 30px;
+    margin-bottom: 5px;
+    margin-top: 30px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    outline: 1;
+    padding: 8px 15px;
+    width: 100%;
+    border-radius: 15px;
+    transition: background-color 2s ease-out;
+}
+
+.edit button:hover{
+   background: crimson;
+}
+
+.volver{
+    margin-top: 30px;
+    text-align: center;
+   
+}
+
+.vuelve {
+    transition: color 1s ease-out;
+}
+
+
+.vuelve:hover{
+     color: red;
+}
+
+.alinear{
+    margin-right: 130px;
+}
+.invariable{
+    margin-right: 130px;
 }

@@ -13,14 +13,12 @@ function Home() {
         a partir de un grupo de profesionales ofrece al estudiante en programación, una forma
         sencilla y amena de resolver todas sus dudas.
       </article>
-      <ul className="enlaces">
-        <li><Link to="/temas/">Explorar</Link></li>
-        <li><Link to="/about">Acerca de</Link></li>
-        <li><Link to="/user/acceso">Acceso</Link></li>
-        
-        
-                                
-      </ul>
+      <div className="enlaces">
+        <button><Link to="/temas/">Explorar</Link></button>
+        <button className="center"><Link to="/user/acceso">Acceso</Link></button>
+        <button><Link to="/about">Acerca de</Link></button>
+                                                        
+      </div>
       </div>
     </div>
   );

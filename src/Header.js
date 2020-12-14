@@ -10,15 +10,17 @@ function Header (){
     return(
         //para que los usuarios tengan foto de perfil
        <header>
-          
-       <span className="a">{me && me.login}</span>
         
-        <div>
-            <Link to="/user/editar-perfil">Ver/Editar perfil</Link>
-        </div>
-
-        <button onClick={() => setMe()}>Cerrar cesion</button> 
-                              
+       {me && 
+       <div className="user">
+           <div className="foto"></div>
+           <div className="nombre">{me.login}</div>
+           <button onClick={() => setMe()}>Cerrar cesion</button>
+       </div>
+               
+       }    
+                     
+       <Link to="/user/editar-perfil" className="e">Ver/Editar perfil</Link>                     
        </header>
 
     )

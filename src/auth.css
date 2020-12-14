@@ -1,0 +1,26 @@
+.acceso{
+  background-image: url(./imagenes/acceso.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  
+         
+}
+
+.toggle{
+  cursor: pointer;
+  font: bold;
+  transition: color 1s ease-out;
+  color: beige;
+  text-align: center;
+  
+}
+
+.toggle:hover{
+   color: darkred;
+   
+}
+
