@@ -1,84 +1,86 @@
 import { useState } from 'react'
 import './modifyuser.css';
 import { edit } from '../api'
-import {useUser, useSetUser} from './UserContext';
-import { Link } from 'react-router-dom';
+import { useUser, useSetUser } from './UserContext';
+import { Link, Redirect, useHistory } from 'react-router-dom';
 import Auth from '../Auth'
 
 function ModifyUser() {
-    const me = useUser();
+  const me = useUser();
 
-    const setMe = useSetUser()
-  
+  const setMe = useSetUser()
+  const history = useHistory()
   const [login, setLogin] = useState(me && me.login || '')
   const [password, setPassword] = useState('')
   const [experto, setExperto] = useState('si')
-  const [empresa, setEmpresa] = useState(me && me.empresa ||'')
-  if (!me) return <Auth />
-    
-  
+  const [empresa, setEmpresa] = useState(me && me.empresa || '')
+  if (!me) return <Redirect to="/user/acceso" />
+
+
   const handleSubmit = async e => {
     e.preventDefault()
     const data = await edit(me.id, login, password, experto === 'si', empresa, me.token);
-    
-    if(data.token) {
+
+    if (data.token) {
       setMe(data)
+      history.push("/temas/1")
+    }
+    
   }
 
-  }
 
   return (
     <div className="edit">
       <div className="formulario">
-      <form onSubmit={handleSubmit}>
-        <label>
-          Nombre:
+        <form onSubmit={handleSubmit}>
+          <label>
+            Nombre:
           <label className="invariable">{me.nombre}</label>
-        </label>
-        <label>
-          Email:
+          </label>
+          <label>
+            Email:
           <label className="invariable">{me.email}</label>
-        </label>
-        <label>
-          Nombre de usuario actual:
+          </label>
+          <label>
+            Nombre de usuario actual:
           <label className="alinear">{me.login}</label>
-        </label>
-        <label>
-          Nuevo nombre de usuario:
+          </label>
+          <label>
+            Nuevo nombre de usuario:
           <input type="text" value={login} onChange={e => setLogin(e.target.value)} />
-        </label>
-        
-        <label>
-          Introducir nueva contraseña:
+          </label>
+
+          <label>
+            Introducir nueva contraseña:
           <input type="password" value={password} onChange={e => setPassword(e.target.value)} />
-        </label>
-        <label>
-          experto:
+          </label>
+          <label>
+            experto:
           <select className="alinear" value={experto} onChange={e => setExperto(e.target.value)}>
-               <option value="si">Si</option>
-               <option value="no">No</option>
-         </select>
-        </label>
-        <label>
-          Empresa actual:
+              <option value="si">Si</option>
+              <option value="no">No</option>
+            </select>
+          </label>
+          <label>
+            Empresa actual:
           <label className="alinear">{me.empresa}</label>
-        </label>
-        <label>
-        Nueva Empresa:
+          </label>
+          <label>
+            Nueva Empresa:
           <input type="text" value={empresa} onChange={e => setEmpresa(e.target.value)} />
-        </label>
-        
-        <button>Guardar Cambios</button>
-                         
-      </form>
+          </label>
+
+          <button>Guardar Cambios</button>
+
+        </form>
       </div>
 
       <div className="volver">
         <Link className="vuelve" to="/temas" >Volver a los temas</Link>
       </div>
-         
+
     </div>
-    
+
   );
 }
 

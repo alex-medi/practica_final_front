@@ -9,12 +9,13 @@ function Respuestas() {
     
   const [text, setText] = useState('')
   
-  const experto = useUser();
+  const me = useUser();
+  
   const selectedQuestion = parseInt(useParams().idPregunta || "1")
-    
+  if(me.experto === 0) return null  
   const handleSubmit = async e => {
     e.preventDefault()
-    await respuesta(selectedQuestion, text, experto);
+    await respuesta(selectedQuestion, text, me.token);
     
   }
 

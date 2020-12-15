@@ -4,6 +4,9 @@ import AnswerQuestion from './preguntas/AnswerQuestion'
 import Tema from './Tema';
 import AskViewer from './preguntas/AskViewer';
 import AnswerViewer from './preguntas/AnswerViewer';
+import './temalayout.css';
+import Acordeon_P from './Acordeon_P';
+import Acordeon_R from './Acordeon_R';
 
 function TemaLayout() {
         
@@ -11,23 +14,28 @@ function TemaLayout() {
 
         <div className="principal">
 
-            <aside>
+            <aside className="navbar">
+                <h2>Temáticas</h2>
                 <Tema />
             </aside>
-
+             
+             <main>
             <Switch>
                 <Route path="/temas/:idTema" exact>
                     <AskViewer />
 
                 </Route >
                 <Route path="/temas/:idTema/new-question" exact>
-
+                     <Acordeon_P>
                     <CreateQuestion />
+                    </Acordeon_P>
 
                 </Route>
 
                 <Route path="/temas/:idTema/pregunta/:idPregunta/responder" exact>
+                    <Acordeon_R>
                     <AnswerQuestion />
+                    </Acordeon_R>
                 </Route>
 
                 <Route path="/temas/:idTema/pregunta/:idPregunta" exact>
@@ -38,6 +46,7 @@ function TemaLayout() {
 
 
             </Switch>
+            </main>
 
         </div>
     )

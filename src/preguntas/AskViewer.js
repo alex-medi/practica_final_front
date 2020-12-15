@@ -1,8 +1,8 @@
 import { useTemaById } from '../api';
 import CreateQuestion from './CreateQuestion'
 import AnswerQuestion from './AnswerQuestion'
-import New_Ask from './Acordeon_P';
-import New_Answer from './Acordeon_R';
+import New_Ask from '../Acordeon_P';
+import New_Answer from '../Acordeon_R';
 import { useUser } from '../usuarios/UserContext';
 import { Link, useParams } from 'react-router-dom';
 
@@ -33,16 +33,18 @@ function AskViewer() {
 
                             </div>
 
-                            {me.experto === 1 &&
+                            {me && me.experto === 1 &&
                                 <Link to={'/temas/' + pregunta.id_tematica + '/pregunta/' + pregunta.id + '/responder'}>
                                     <button>Responder esta pregunta</button>
                                 </Link>
                             }
                         </>
                         <div>
+                         
                         <Link to={'/temas/' + pregunta.id_tematica + '/new-question'}>
                             <button>Crear nueva pregunta</button>
                         </Link>
+                        
                     </div>
                     </li>
 

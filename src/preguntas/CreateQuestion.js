@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './createquestion.css';
-import { useParams } from 'react-router-dom';
+import { useParams, Redirect } from 'react-router-dom';
 import { pregunta } from '../api'
 import {useUser} from '../usuarios/UserContext';
 import Auth from '../Auth';
@@ -14,7 +14,8 @@ function Preguntas() {
       
 
   const selectedTema = parseInt(useParams().idTema || "1")
-  if (!me) return <Auth />
+  if (!me) return <Redirect to="/user/acceso" />
+  
   const handleSubmit = async e => {
     e.preventDefault()
     await pregunta(selectedTema, title, text, me.token);

@@ -1,5 +1,13 @@
 .tematic-column{
   cursor: pointer;
+  list-style: none;
+  justify-content: space-between;
+  
+}
+
+.tematic-column > li{
+  padding-bottom: 10px;
+  color: black;
 }
 
 .tematicas .active{
