@@ -3,10 +3,11 @@ import CreateQuestion from './preguntas/CreateQuestion';
 import AnswerQuestion from './preguntas/AnswerQuestion'
 import Tema from './Tema';
 import AskViewer from './preguntas/AskViewer';
-import AnswerViewer from './preguntas/AnswerViewer';
+import QuestionViewer from './preguntas/QuestionViewer';
 import './temalayout.css';
 import Acordeon_P from './Acordeon_P';
 import Acordeon_R from './Acordeon_R';
+import SearchAsk from './preguntas/SearchAsk';
 
 function TemaLayout() {
         
@@ -23,13 +24,14 @@ function TemaLayout() {
             <Switch>
                 <Route path="/temas/:idTema" exact>
                     <AskViewer />
-
+                    <SearchAsk />
+                   
                 </Route >
                 <Route path="/temas/:idTema/new-question" exact>
-                     <Acordeon_P>
-                    <CreateQuestion />
-                    </Acordeon_P>
-
+                <Acordeon_P>
+                <CreateQuestion />
+                </Acordeon_P>
+                
                 </Route>
 
                 <Route path="/temas/:idTema/pregunta/:idPregunta/responder" exact>
@@ -39,12 +41,9 @@ function TemaLayout() {
                 </Route>
 
                 <Route path="/temas/:idTema/pregunta/:idPregunta" exact>
-
-                    <AnswerViewer />
-
+                    <QuestionViewer />
                 </Route>
-
-
+         
             </Switch>
             </main>
 

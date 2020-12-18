@@ -6,9 +6,13 @@ export const useUserInform = (id) => useFetch('http://localhost:8080/api/usuario
 
 export const useTemaById = (id) => useFetch('http://localhost:8080/api/preguntas/'+ id)
 
-export const usePreguntaByKey = (key) => useFetch('http://localhost:8080/api/preguntas/'+ key)
-
 export const usePreguntaById = (id) => useFetch('http://localhost:8080/api/respuestas/'+ id)
+
+export const buscar = async (clave) => {
+  const ret = await fetch('http://localhost:8080/api/pregunta/' + clave)
+  const data = await ret.json()
+  return data
+}
 
 export const login = async (login, password) => {
     const ret = await fetch('http://localhost:8080/api/usuarios/login', {
@@ -20,44 +24,44 @@ export const login = async (login, password) => {
       return data
 }
 
-export const register = async (nombre, email, login, password, experto, empresa) => {
+export const register = async (fd) => {
     const ret = await fetch('http://localhost:8080/api/usuarios', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ nombre, email, login, password, experto, empresa})
+      //headers: { 'Content-Type': 'application/json' },
+      body: fd
     })
     const data = await ret.json()
     return data
   }
 
-  export const pregunta = async (id, titulo, cuerpo, token) => {
+  export const pregunta = async (id, fd, token) => {
     
     const ret = await fetch('http://localhost:8080/api/preguntas/'+id, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + token },
-      body: JSON.stringify({ titulo, cuerpo })
+      headers: { 'Authorization': 'Bearer ' + token },
+      body: fd
     })
     const data = await ret.json()
     return data
   }
 
-  export const respuesta = async (id, descripcion, token) => {
+  export const respuesta = async (id, fd, token) => {
     
     const ret = await fetch('http://localhost:8080/api/respuestas/'+id, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + token},
-      body: JSON.stringify({ descripcion })
+      headers: { 'Authorization': 'Bearer ' + token},
+      body: fd
     })
     const data = await ret.json()
     return data
   }
 
-  export const edit = async (id, login, password, experto, empresa, token) => {
+  export const edit = async (fd, token) => {
     
-    const ret = await fetch('http://localhost:8080/api/usuarios/'+id, {
+    const ret = await fetch('http://localhost:8080/api/usuarios/',{
       method: 'PUT',
-      headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + token },
-      body: JSON.stringify({ login, password, experto, empresa })
+      headers: { 'Authorization': 'Bearer ' + token },
+      body: fd
     })
     const data = await ret.json()
     return data

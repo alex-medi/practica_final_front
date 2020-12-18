@@ -31,6 +31,18 @@ header .user {
   font: bold;
 }
 
+header .photo {
+  background-color: #ddd;
+  background-position: center center;
+  background-size: cover;
+  border: 1px solid #aaa;
+  border-radius: 50%;
+  height: 32px;
+  margin-right: 8px;
+  width: 32px;
+}
+
+
 
 
 .user > button{

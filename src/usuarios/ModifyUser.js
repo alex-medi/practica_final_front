@@ -7,28 +7,36 @@ import Auth from '../Auth'
 
 function ModifyUser() {
   const me = useUser();
+  const setMe = useSetUser();
+  const history = useHistory();
 
-  const setMe = useSetUser()
-  const history = useHistory()
-  const [login, setLogin] = useState(me && me.login || '')
-  const [password, setPassword] = useState('')
-  const [experto, setExperto] = useState('si')
-  const [empresa, setEmpresa] = useState(me && me.empresa || '')
+  const [login, setLogin] = useState(me && me.login || '');
+  const [password, setPassword] = useState('');
+  const [experto, setExperto] = useState('si');
+  const [empresa, setEmpresa] = useState(me && me.empresa || '');
   if (!me) return <Redirect to="/user/acceso" />
 
 
   const handleSubmit = async e => {
     e.preventDefault()
-    const data = await edit(me.id, login, password, experto === 'si', empresa, me.token);
-
+    const photo = e.target.photo.files[0]
+    const fd = new FormData()
+    fd.append('photo', photo)
+    fd.append('login', login)
+    fd.append('password', password)
+    fd.append('experto', experto === 'si' ? 1 : 0)
+    fd.append('empresa', empresa)
+    const data = await edit(fd,  me.token);
     if (data.token) {
       setMe(data)
       history.push("/temas/1")
     }
+         
     
   }
 
-
+  const photoStyle = me && me.photo && { backgroundImage: 'url(' + me.photo + ')'}
+  
   return (
     <div className="edit">
       <div className="formulario">
@@ -40,6 +48,14 @@ function ModifyUser() {
           <label>
             Email:
           <label className="invariable">{me.email}</label>
+          </label>
+          <label className="user-image">
+            <span>Foto de perfil</span>
+            <div className="value">
+              <div className="photo" style={photoStyle} />
+              <input name="photo" type="file" accept="image/*" />
+
+            </div>
           </label>
           <label>
             Nombre de usuario actual:

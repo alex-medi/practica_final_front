@@ -3,7 +3,7 @@
     border-radius: 15px;
     margin: 10px;
     padding: 20px;
-    height: 370px;
+    height: 420px;
     width: 420px;
     background-color: darksalmon;
     margin: auto;
@@ -18,7 +18,7 @@
     
 }
 
-.edit input {
+.edit input:not([type="file"]) {
     border-radius: 15px;
     border: 2px solid black;
     margin-bottom: 12px;

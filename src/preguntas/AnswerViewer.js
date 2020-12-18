@@ -10,7 +10,7 @@ function AnswerViewer() {
   const selectedQuestion = parseInt(useParams().idPregunta || "1")
   
   const respuestas = usePreguntaById(selectedQuestion)
-  if (!me) return <Redirect to="/user/acceso" />
+  if (!me) return "Para poder ver las respuestas, registrate!" //<Redirect to="/user/acceso" />
   if (!respuestas || respuestas.error) return null
     
   return (

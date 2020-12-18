@@ -5,14 +5,14 @@
     padding: 20px;
     position: relative;
     text-align: center;
-    height: 325px;
-    width: 320px;
+    height: 375px;
+    width: 340px;
     background-color: darkcyan;
     margin: auto;
     margin-top: 14%;
   }
 
-  .registro input {
+  .registro input:not([type="file"]) {
     border-radius: 15px;
     border: 1px solid black;
     display: block;
@@ -20,6 +20,11 @@
     outline: 0;
     padding: 8px 15px;
     width: 90%;
+  }
+
+  .photo{
+    margin-bottom: 12px;
+    margin-top: 12px;
   }
   
   .registro label {

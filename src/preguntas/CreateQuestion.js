@@ -18,7 +18,12 @@ function Preguntas() {
   
   const handleSubmit = async e => {
     e.preventDefault()
-    await pregunta(selectedTema, title, text, me.token);
+    const captura = e.target.captura.files[0]
+    const fd = new FormData()
+    fd.append('captura', captura)
+    fd.append('title', title)
+    fd.append('text', text)
+    await pregunta(selectedTema, fd, me.token);
     
   }
 
@@ -35,6 +40,14 @@ function Preguntas() {
           Cuerpo:
           <textarea type="texto" value={text} onChange={e => setText(e.target.value)} />
         </label>
+        <label className="user-image">
+            <span>Añadir captura</span>
+            <div className="value">
+              <div className="captura"/>
+              <input name="captura" type="file" accept="image/*" />
+
+            </div>
+          </label>
                 
         <button>Enviar Pregunta</button>
         

@@ -16,18 +16,31 @@ function Register() {
 
   const handleSubmit = async e => {
     e.preventDefault()
-    const data = await register(username, email, login, password,experto === 'si',empresa)
+    const photo = e.target.photo.files[0]
+    const fd = new FormData()
+    fd.append('photo', photo)
+    fd.append('login', login)
+    fd.append('password', password)
+    fd.append('experto', experto === 'si' ? 1 : 0)
+    fd.append('empresa', empresa)
+    const data = await register(fd)
+    
     if (data.token) {
       setMe(data)
     } else {
       setError(data.error || true)
     }
+
+    
   }
 
   return (
     <div className="registro">
       <form onSubmit={handleSubmit}>
-                   
+           <label>
+           Añadir foto
+          <input placeholder="foto de perfil" className="photo" type="file" accept="image/*" />
+          </label>       
           <input placeholder="nombre" value={username} onChange={e => setUsername(e.target.value)} />
                
          <input placeholder="email" type="email" value={email} onChange={e => setEmail(e.target.value)} />
