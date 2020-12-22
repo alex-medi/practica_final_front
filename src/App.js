@@ -21,7 +21,7 @@ function App() {
           <UserLayout />
 
         </Route>
-        <Route path="/temas">
+        <Route path="/temas/:idTema">
           <TemaLayout />
 
         </Route>

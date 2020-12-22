@@ -16,9 +16,11 @@ function Register() {
 
   const handleSubmit = async e => {
     e.preventDefault()
-    const photo = e.target.photo.files[0]
+    const imagen = e.target.imagen.files[0]
     const fd = new FormData()
-    fd.append('photo', photo)
+    fd.append('nombre',username)
+    fd.append('email', email)
+    fd.append('imagen', imagen)
     fd.append('login', login)
     fd.append('password', password)
     fd.append('experto', experto === 'si' ? 1 : 0)
@@ -30,8 +32,7 @@ function Register() {
     } else {
       setError(data.error || true)
     }
-
-    
+        
   }
 
   return (
@@ -39,7 +40,7 @@ function Register() {
       <form onSubmit={handleSubmit}>
            <label>
            Añadir foto
-          <input placeholder="foto de perfil" className="photo" type="file" accept="image/*" />
+          <input name="imagen" placeholder="foto de perfil" className="photo" type="file" accept="image/*" />
           </label>       
           <input placeholder="nombre" value={username} onChange={e => setUsername(e.target.value)} />
                

@@ -14,7 +14,7 @@ function Home() {
         sencilla y amena de resolver todas sus dudas.
       </article>
       <div className="enlaces">
-        <button><Link to="/temas/">Explorar</Link></button>
+        <button><Link to="/temas/:idTema">Explorar</Link></button>
         <button className="center"><Link to="/user/acceso">Acceso</Link></button>
         <button><Link to="/about">Acerca de</Link></button>
                                                         

@@ -8,7 +8,8 @@ function Header (){
     const history = useHistory()
     const me = useUser()
     const setMe = useSetUser()
-    const photoStyle = me && me.photo && { backgroundImage: 'url(' + me.photo + ')'}
+    console.log(me)
+    const photoStyle = me && me.imagen && { backgroundImage: 'url(' + me.imagen +')'}
     const handleLogOut = e => {
           setMe()
           history.push("/")     

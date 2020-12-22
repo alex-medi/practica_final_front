@@ -1,5 +1,6 @@
 .principal{
     display: flex;
+        
 }
 
 .principal aside.navbar {
@@ -21,6 +22,11 @@
     padding: 20px;
     margin-top: 40px;
     margin-left: 60px;
+  }
+
+  .principal main > .buscar {
+    flex: 0 0 auto;
+
   }
   
   

@@ -10,8 +10,9 @@
   color: black;
 }
 
-.tematicas .active{
+ .active{
     text-decoration: underline;
     font: bold;
+    color: red;
     
 }

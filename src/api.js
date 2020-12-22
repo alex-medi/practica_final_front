@@ -6,7 +6,9 @@ export const useUserInform = (id) => useFetch('http://localhost:8080/api/usuario
 
 export const useTemaById = (id) => useFetch('http://localhost:8080/api/preguntas/'+ id)
 
-export const usePreguntaById = (id) => useFetch('http://localhost:8080/api/respuestas/'+ id)
+export const useRespuestaByIdP = (id) => useFetch('http://localhost:8080/api/respuestas/'+ id)
+
+export const usePreguntaById = (id) => useFetch('http://localhost:8080/api/preguntaId/'+ id)
 
 export const buscar = async (clave) => {
   const ret = await fetch('http://localhost:8080/api/pregunta/' + clave)

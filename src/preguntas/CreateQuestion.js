@@ -11,8 +11,7 @@ function Preguntas() {
   const [text, setText] = useState('')
    
   const me = useUser();
-      
-
+    
   const selectedTema = parseInt(useParams().idTema || "1")
   if (!me) return <Redirect to="/user/acceso" />
   
@@ -21,12 +20,12 @@ function Preguntas() {
     const captura = e.target.captura.files[0]
     const fd = new FormData()
     fd.append('captura', captura)
-    fd.append('title', title)
-    fd.append('text', text)
+    fd.append('titulo', title)
+    fd.append('cuerpo', text)
     await pregunta(selectedTema, fd, me.token);
     
   }
-
+  
   return (
     <div className="pregunta">
       <form onSubmit={handleSubmit}>

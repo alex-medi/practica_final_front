@@ -32,10 +32,10 @@ header .user {
 }
 
 header .photo {
-  background-color: #ddd;
+  
   background-position: center center;
   background-size: cover;
-  border: 1px solid #aaa;
+  border: 1px solid black;
   border-radius: 50%;
   height: 32px;
   margin-right: 8px;

@@ -19,9 +19,9 @@ function ModifyUser() {
 
   const handleSubmit = async e => {
     e.preventDefault()
-    const photo = e.target.photo.files[0]
+    const imagen = e.target.imagen.files[0]
     const fd = new FormData()
-    fd.append('photo', photo)
+    fd.append('imagen', imagen)
     fd.append('login', login)
     fd.append('password', password)
     fd.append('experto', experto === 'si' ? 1 : 0)
@@ -35,7 +35,7 @@ function ModifyUser() {
     
   }
 
-  const photoStyle = me && me.photo && { backgroundImage: 'url(' + me.photo + ')'}
+  const photoStyle = me && me.imagen && { backgroundImage: '../tutorias-api/images/'+ me.imagen}
   
   return (
     <div className="edit">
@@ -50,10 +50,10 @@ function ModifyUser() {
           <label className="invariable">{me.email}</label>
           </label>
           <label className="user-image">
-            <span>Foto de perfil</span>
+            <span>Cambiar foto de perfil</span>
             <div className="value">
               <div className="photo" style={photoStyle} />
-              <input name="photo" type="file" accept="image/*" />
+              <input name="imagen" type="file" accept="image/*" />
 
             </div>
           </label>

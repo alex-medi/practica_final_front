@@ -5,7 +5,7 @@ import { Link, useParams } from 'react-router-dom';
 function Tema (){
 
     const selectedTema = parseInt(useParams().idTema || "1")
-    
+    console.log(selectedTema)
     const etiquetas = useTemaList();
       
     return(

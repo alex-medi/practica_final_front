@@ -18,9 +18,9 @@ function Respuestas() {
     const captura = e.target.captura.files[0]
     const fd = new FormData()
     fd.append('captura', captura)
-    fd.append('text', text)
+    fd.append('descripcion', text)
 
-    await respuesta(selectedQuestion, captura, me.token);
+    await respuesta(selectedQuestion, fd, me.token);
     
   }
 

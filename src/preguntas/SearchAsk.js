@@ -9,9 +9,9 @@ function SearchAsk() {
     const [resultados, setResultados] = useState()
     const selectedTema = parseInt(useParams().idTema || "1")
 
-    const preguntas = useTemaById(selectedTema);
+    // const preguntas = useTemaById(selectedTema);
 
-    if (!preguntas || preguntas.error) return 'Selecciona una temática'
+    if (!pregunta || pregunta.error) return 'Selecciona una temática'
 
     const handleChange = event => {
         setClave(event.target.value);
@@ -26,15 +26,23 @@ function SearchAsk() {
     }
 
     return (
-        <>
+        <div> 
             <form className="busqueda" onSubmit={handleSubmit}>
                 <h4>Buscar por palabra clave</h4>
 
-                <input placeholder="busqueda" value={clave} onChange={handleChange}></input>
+                <input placeholder="buscar palabra clave" value={clave} onChange={handleChange}></input>
                 <button>🔍</button>
 
             </form>
 
+            <div>
+
+                <Link to={'/temas/'+ selectedTema +'/new-question'}>
+                    <button>Crear nueva pregunta</button>
+                </Link>
+
+            </div>
+            
             {resultados &&
                 <div className="resultados">
                     <h4>Resultados:</h4>
@@ -47,7 +55,7 @@ function SearchAsk() {
 
                 </div>
             }
-        </>
+        </div>
 
     )
 
