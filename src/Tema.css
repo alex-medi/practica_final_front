@@ -5,14 +5,18 @@
   
 }
 
-.tematic-column > li{
-  padding-bottom: 10px;
+.tematic-column > li > a{
+  
   color: black;
 }
 
- .active{
-    text-decoration: underline;
-    font: bold;
-    color: red;
-    
+.tematic-column > li{
+  padding-bottom: 12px;
 }
+
+ .active{
+    text-shadow: 2px 2px 2px silver;
+    font-weight: bold;
+    font-size: 17px;   
+}
+

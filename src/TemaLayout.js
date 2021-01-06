@@ -1,13 +1,9 @@
 import { Switch, Route } from 'react-router-dom';
 import CreateQuestion from './preguntas/CreateQuestion';
-import AnswerQuestion from './preguntas/AnswerQuestion'
 import Tema from './Tema';
 import AskViewer from './preguntas/AskViewer';
-import AnswerViewer from './preguntas/AnswerViewer'
 import QuestionViewer from './preguntas/QuestionViewer';
 import './temalayout.css';
-import Acordeon_P from './Acordeon_P';
-import Acordeon_R from './Acordeon_R';
 import SearchAsk from './preguntas/SearchAsk';
 
 function TemaLayout() {
@@ -17,7 +13,7 @@ function TemaLayout() {
         <div className="principal">
 
             <aside className="navbar">
-                <h2>Temáticas</h2>
+                
                 <Tema />
             </aside>
 
@@ -27,19 +23,19 @@ function TemaLayout() {
                         <AskViewer />
 
                     </Route >
-                    <Route path="/temas/:idTema/new-question">
+                    <Route path="/temas/:idTema/new-question" exact>
 
                         <CreateQuestion />
 
                     </Route>
 
-                    <Route path="/temas/:idTema/pregunta/:idPregunta/responder">
+                    <Route path="/temas/:idTema/pregunta/:idPregunta/responder" exact>
 
                         <QuestionViewer />
 
                     </Route>
 
-                    <Route path="/temas/:idTema/pregunta/:idPregunta">
+                    <Route path="/temas/:idTema/pregunta/:idPregunta" exact>
                         <QuestionViewer />
 
                     </Route>

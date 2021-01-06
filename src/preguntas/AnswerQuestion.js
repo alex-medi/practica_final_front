@@ -1,11 +1,10 @@
 import { useState } from 'react'
 import './respuesta.css';
-
 import { respuesta } from '../api'
 import {useUser} from '../usuarios/UserContext';
 
 import { useParams } from 'react-router-dom';
-function Respuestas() {
+function Respuestas({ reload }) {
     
   const [text, setText] = useState('')
   
@@ -21,20 +20,22 @@ function Respuestas() {
     fd.append('descripcion', text)
 
     await respuesta(selectedQuestion, fd, me.token);
-    
+    reload()
   }
 
   return (
     <div className="respuesta">
+      <h4>Responder pregunta</h4>
       <form onSubmit={handleSubmit}>
-        <label className="cuerpo">
-          Describir respuesta:
-          <textarea type="texto" value={text} onChange={e => setText(e.target.value)} />
+        <label>
+          Describir respuesta
+          
         </label>
+        <textarea className="cuerpo" type="texto" value={text} onChange={e => setText(e.target.value)} />
         <label className="user-image">
             <span>Añadir captura</span>
             <div className="value">
-              <div className="captura"/>
+              
               <input name="captura" type="file" accept="image/*" />
 
             </div>

@@ -7,25 +7,26 @@
     background-color: dodgerblue;
     flex: 0 0 200px;
     padding: 20px;
-    height: 100vh;
+    position: fixed;
+    margin-top: 66px;
     border-right: solid 2px black;
+    height: 100vh;
+    width: 150px;
   }
-
-  .navbar h2 {
-    margin: 0 0 16px;
-  }
-
+  
   .principal main {
     background-color: white;
     border-radius: 10px;
     flex: 1 1 auto;
     padding: 20px;
-    margin-top: 40px;
-    margin-left: 60px;
+    margin-top: 60px;
+    margin-left: 360px;
   }
 
-  .principal main > .buscar {
+  .buscar {
     flex: 0 0 auto;
+    margin-top: 60px;
+    margin-right: 20px;
 
   }
   

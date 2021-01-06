@@ -1,0 +1,31 @@
+
+  .ask-list{
+    list-style: none;
+    border: 1px solid black;
+    width: 420px;
+  }
+
+  .responder{
+    border-radius: 15px;
+    margin-top: 20px;
+    background-color: limegreen;
+    color: black;
+  }
+
+  .card-datos{
+    padding: 5px 6px 7px 7px;
+    text-align: right;
+    margin-top: 20px;
+        
+  }
+
+  .fecha{
+    margin-top: 15px;
+  }
+  .separacion{
+    color: white;
+  }
+  .user{
+    color: dodgerblue;
+    font-weight: bold;
+  }

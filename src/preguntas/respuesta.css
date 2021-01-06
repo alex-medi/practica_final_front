@@ -1,17 +1,20 @@
 .respuesta {
     border: 2px solid black;
-    border-radius: 4px;
-    margin: 10px;
+    border-radius: 15px;
     padding: 20px;
     position: relative;
     text-align: center;
-    height: 210px;
-    width: 300px;
-    background-color: limegreen;
+    height: 440px;
+    width: 530px;
+    background-color: #C0C0C0;
+    margin-top: 40px;
 }
 .respuesta .cuerpo{
-   height: 130px;
-   
+   height: 200px;
+   margin-top: 20px;
+   margin-bottom: 20px;
+   margin-left: 18px;
+   width: 490px;
 }
   
 .respuesta label {
@@ -21,5 +24,7 @@
 }
 
 .respuesta button {
-    background-color: steelblue;
+    background-color: limegreen;
+    border-radius: 15px;
+    margin-top: 40px;
 }

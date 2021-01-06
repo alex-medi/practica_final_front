@@ -1,30 +1,39 @@
+import './answeritem.css'
 
 const moment = require('moment');
 
-function AskItem({respuesta}){
-  
-    const photoStyle = respuesta.captura && { backgroundImage: 'url(' + respuesta.captura + ')'}
-        return(
-          <li>
-            <>
+function AnswerItem({ respuesta }) {
 
-              <ul>
-                <li>{respuesta.descripcion}</li>
-                <li>
-                  <label>
-                    Respondido por:
-                        <label >{respuesta.login}</label>
-                  </label>
-                </li>
-                <li>{respuesta.fecha_respuesta}</li>
-                <div className="captura" style={photoStyle} />
-              </ul>
+  const photoStyle = respuesta.captura && { backgroundImage: 'url(' + respuesta.captura + ')' }
+  return (
+    <ul className="answer-list">
+    <li>
+      <>
 
-            </>
-          </li>
-          )
+        <div>{respuesta.descripcion}</div>
+        <div className="captura" style={photoStyle} />
+        <div className="card-datos">
+        <div>
+          <label>
+            Respondido por:
+              <label >{respuesta.login}</label>
+          </label>
+        </div>
+        <div className="fecha">{moment(respuesta.fecha_respuesta).format('DD/MM/YYYY HH:mm')}</div>
+        </div>
+        <div>
+          <label>
+            Puntuacion:
+              <label >{respuesta.rating}</label>
+          </label>
+        </div>
+
+      </>
+    </li>
+    </ul>
+  )
 
 
 }
 
-export default AskItem;
+export default AnswerItem;

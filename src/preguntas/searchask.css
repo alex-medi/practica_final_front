@@ -1,0 +1,17 @@
+
+.nueva{
+  cursor: pointer;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 15px;
+  background-color: dodgerblue;
+}
+
+.buscador{
+  position: fixed;
+  margin-left: -220px;
+}
+
+button{
+  cursor: pointer;
+}

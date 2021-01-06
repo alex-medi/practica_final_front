@@ -57,6 +57,18 @@ export const register = async (fd) => {
     const data = await ret.json()
     return data
   }
+  
+  export const puntuar = async (id, rating, token) => {
+    
+    const ret = await fetch('http://localhost:8080/api/puntuacion/'+id, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json', 'Authorization': 'Bearer ' + token},
+      body: JSON.stringify({ rating })
+    })
+    const data = await ret.json()
+    return data
+  }
+
 
   export const edit = async (fd, token) => {
     

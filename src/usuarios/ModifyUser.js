@@ -3,7 +3,6 @@ import './modifyuser.css';
 import { edit } from '../api'
 import { useUser, useSetUser } from './UserContext';
 import { Link, Redirect, useHistory } from 'react-router-dom';
-import Auth from '../Auth'
 
 function ModifyUser() {
   const me = useUser();
@@ -92,7 +91,7 @@ function ModifyUser() {
       </div>
 
       <div className="volver">
-        <Link className="vuelve" to="/temas" >Volver a los temas</Link>
+        <Link className="vuelve" to="/temas/:idTema" >Volver a los temas</Link>
       </div>
 
     </div>

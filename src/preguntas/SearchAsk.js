@@ -1,7 +1,7 @@
 import { Link, useParams } from 'react-router-dom';
-import { useTemaById, buscar, pregunta } from '../api';
-import { useUser } from '../usuarios/UserContext';
+import { buscar, pregunta } from '../api';
 import { useState } from 'react';
+import './searchask.css';
 
 function SearchAsk() {
 
@@ -26,32 +26,36 @@ function SearchAsk() {
     }
 
     return (
-        <div> 
-            <form className="busqueda" onSubmit={handleSubmit}>
-                <h4>Buscar por palabra clave</h4>
-
-                <input placeholder="buscar palabra clave" value={clave} onChange={handleChange}></input>
-                <button>🔍</button>
-
-            </form>
-
+        <div className="buscador">
             <div>
 
-                <Link to={'/temas/'+ selectedTema +'/new-question'}>
-                    <button>Crear nueva pregunta</button>
+                <Link to={'/temas/' + selectedTema + '/new-question'}>
+                    <button className="nueva">Crear nueva pregunta</button>
                 </Link>
 
             </div>
-            
+            <form className="busqueda" onSubmit={handleSubmit}>
+                
+                <input placeholder="buscar por palabra clave" value={clave} onChange={handleChange}></input>
+                <button>🔍</button>
+
+            </form>
+           
             {resultados &&
                 <div className="resultados">
                     <h4>Resultados:</h4>
-                    {resultados.map(pregunta =>
+
+                    {
+                     (Array.isArray(resultados)&& resultados.length > 0)?
+                                                             
+                    resultados.map(pregunta =>
 
                         <Link to={'/temas/' + pregunta.id_tematica + '/pregunta/' + pregunta.id}>
                             <h4>{pregunta.titulo}</h4>
                         </Link>
-                    )}
+                    ): 'tu busqueda no obtuvo resultados'}
+
+                    
 
                 </div>
             }

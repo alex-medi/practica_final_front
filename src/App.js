@@ -2,13 +2,10 @@ import './App.css';
 import TemaLayout from './TemaLayout'
 import { Switch, Route } from 'react-router-dom';
 import Home from './Home'
-
 import About from './About';
-
-
 import Header from './Header'
 import UserLayout from './UserLayout'
-import Login from './usuarios/Login';
+
 function App() {
 
   return (
@@ -16,7 +13,7 @@ function App() {
     <div className="App">
       <Header />
       <Switch>
-       
+
         <Route path="/user">
           <UserLayout />
 

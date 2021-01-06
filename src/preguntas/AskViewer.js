@@ -1,10 +1,7 @@
-import { useTemaById, pregunta } from '../api';
-import CreateQuestion from './CreateQuestion'
-import './askviwer.css';
-import New_Ask from '../Acordeon_P';
-import New_Answer from '../Acordeon_R';
+import { useTemaById} from '../api';
+
 import { useUser } from '../usuarios/UserContext';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import AskItem from './AskItem';
 
 const moment = require('moment');
