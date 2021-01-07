@@ -1,6 +1,39 @@
 
 .answer-list{
     list-style: none;
+   
+    width: 580px;
+    margin-left: -60px;
+   
+}
+
+.captura2 {
     
-    width: 420px;
+    background-position: center center;
+    background-size: cover;
+    border: 1px solid black;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    height: 320px;
+    margin-left: -22px;
+    width: 580px;
+  }
+
+.card-datos2{
+    margin-right: 19px;
+    text-align: right;
+}
+
+.experto{
+    color: limegreen;
+    font-weight: bold;
+}
+
+.puntuacion{
+    margin-top: 40px;
+        
+}
+
+.descripcion{
+    margin-left: -19px;
 }

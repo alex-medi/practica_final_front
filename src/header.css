@@ -7,16 +7,26 @@ header {
   justify-content: space-between;
   margin-bottom: 15px;
   padding: 3px 15px;
-  height: 58px;
+  height: 92px;
   width: 100%;
   position: fixed;
 }
 
+.logo{
+  background-image: url(./imagenes/cloud.png);
+  background-position: center center;
+  background-size: cover;
+  width: 100px;
+  height: 80px;
+  margin-left: 28px;
+}
+
 header .e {
-  color: tomato;
-  font-weight: bold;
-  text-decoration: none;
-  margin-right: 30px;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-left: 30px;
+  border-radius: 15px;
+  background-color: goldenrod;
 }
 
 header .user {
@@ -37,9 +47,9 @@ header .photo {
   background-size: cover;
   border: 1px solid black;
   border-radius: 50%;
-  height: 32px;
+  height: 52px;
   margin-right: 8px;
-  width: 32px;
+  width: 52px;
 }
 
 
@@ -49,7 +59,7 @@ header .photo {
   cursor: pointer;
   margin-left: 30px;
   border-radius: 15px;
-  background-color: darkorange;
+  background-color: goldenrod;
 }
 
 

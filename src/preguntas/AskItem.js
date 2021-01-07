@@ -4,8 +4,9 @@ const moment = require('moment');
 
 function AskItem({pregunta, isExperto, selectedTema}) {
          
-        const photoStyle = pregunta.captura && { backgroundImage: 'url(' + pregunta.captura + ')' }
+        //const photoStyle = pregunta.captura && { backgroundImage: 'url(' + pregunta.captura + ')' }
         return (
+            
             <ul className="ask-list">
             <li className={selectedTema === pregunta.id_tematica}>
                 <>
@@ -37,7 +38,7 @@ function AskItem({pregunta, isExperto, selectedTema}) {
 
             </li>
             </ul>
-
+            
         )
     
 

@@ -1,5 +1,5 @@
 import { useTemaById} from '../api';
-
+import './askviwer.css';
 import { useUser } from '../usuarios/UserContext';
 import { useParams } from 'react-router-dom';
 import AskItem from './AskItem';
@@ -18,7 +18,7 @@ function AskViewer() {
 
     return (
         <>
-            <h2>Preguntas en esta tematica</h2>
+            <h2 className="todas">Preguntas en esta tematica</h2>
             <ul className="pregunta-lista">
                 {preguntas && preguntas.map(pregunta =>
 

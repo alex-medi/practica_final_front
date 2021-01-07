@@ -17,17 +17,19 @@ function Header (){
       }
 
     return(
-        //para que los usuarios tengan foto de perfil
+        
        <header>
+       <div className="logo"></div>
         
        {me && 
        <>
+               
        <div className="user">
            <div className="photo" style={photoStyle}/>
            <div className="nombre">{me.login}</div>
+           <Link to="/user/editar-perfil"><button className="e">perfil</button></Link>
            <button onClick={handleLogOut}>Cerrar cesion</button>
        </div>
-       <Link to="/user/editar-perfil" className="e">Ver/Editar perfil</Link> 
         </>     
        }    
                      

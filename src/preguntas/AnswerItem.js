@@ -1,4 +1,4 @@
-import './answeritem.css'
+import './answeritem.css';
 
 const moment = require('moment');
 
@@ -9,23 +9,21 @@ function AnswerItem({ respuesta }) {
     <ul className="answer-list">
     <li>
       <>
-
-        <div>{respuesta.descripcion}</div>
-        <div className="captura" style={photoStyle} />
-        <div className="card-datos">
+        <div className="descripcion">{respuesta.descripcion}</div>
+        <div className="captura2" style={photoStyle} />
+        <div className="card-datos2">
         <div>
-          <label>
-            Respondido por:
-              <label >{respuesta.login}</label>
-          </label>
+          <label>Respondido por:<label className="separacion"> ''</label></label> 
+                   
+          <label className="experto">{respuesta.login}</label>
         </div>
         <div className="fecha">{moment(respuesta.fecha_respuesta).format('DD/MM/YYYY HH:mm')}</div>
         </div>
         <div>
-          <label>
+          <div className="puntuacion">
             Puntuacion:
               <label >{respuesta.rating}</label>
-          </label>
+          </div>
         </div>
 
       </>

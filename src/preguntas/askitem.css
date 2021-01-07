@@ -1,13 +1,15 @@
+  
 
   .ask-list{
     list-style: none;
-    border: 1px solid black;
-    width: 420px;
+    border-bottom: 1px solid black;
+    width: 550px;
   }
 
   .responder{
     border-radius: 15px;
     margin-top: 20px;
+    margin-bottom: 16px;
     background-color: limegreen;
     color: black;
   }

@@ -1,15 +1,15 @@
 
 .nueva{
   cursor: pointer;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 80px;
+  margin-bottom: 40px;
   border-radius: 15px;
   background-color: dodgerblue;
 }
 
 .buscador{
   position: fixed;
-  margin-left: -220px;
+  margin-left: -280px;
 }
 
 button{
