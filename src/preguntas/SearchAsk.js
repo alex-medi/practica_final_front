@@ -30,7 +30,7 @@ function SearchAsk() {
             <div>
 
                 <Link to={'/temas/' + selectedTema + '/new-question'}>
-                    <button className="nueva">Crear nueva pregunta</button>
+                    <button className="nueva">Formular pregunta</button>
                 </Link>
 
             </div>

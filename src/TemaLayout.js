@@ -40,6 +40,11 @@ function TemaLayout() {
 
                     </Route>
 
+                    <Route path="/temas/:idTema/pregunta/:idPregunta/:idRespuesta" exact>
+                       <QuestionViewer />
+                       
+                    </Route>
+
                 </Switch>
 
             </main>

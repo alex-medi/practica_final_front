@@ -10,6 +10,7 @@ function Register() {
   const [email, setEmail] = useState('')
   const [login, setLogin] = useState('')
   const [password, setPassword] = useState('')
+  const [repeatedPassword, setRepeatedPassword] = useState('')
   const [experto, setExperto] = useState('')
   const [empresa, setEmpresa] = useState('')
   const [error, setError] = useState()
@@ -23,6 +24,7 @@ function Register() {
     fd.append('imagen', imagen)
     fd.append('login', login)
     fd.append('password', password)
+    fd.append('repeatedPassword', repeatedPassword)
     fd.append('experto', experto === 'si' ? 1 : 0)
     fd.append('empresa', empresa)
     const data = await register(fd)
@@ -49,6 +51,8 @@ function Register() {
          <input placeholder="nombre de usuario" type="login" value={login} onChange={e => setLogin(e.target.value)} />
                
         <input placeholder="contraseña" type="password" value={password} onChange={e => setPassword(e.target.value)} />
+
+        <input placeholder="repetir contraseña" type="password" value={repeatedPassword} onChange={e => setRepeatedPassword(e.target.value)} />
         
         <label>
           ¿Eres experto?

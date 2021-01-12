@@ -8,7 +8,6 @@ function Header (){
     const history = useHistory()
     const me = useUser()
     const setMe = useSetUser()
-    console.log(me)
     const photoStyle = me && me.imagen && { backgroundImage: 'url(' + me.imagen +')'}
     const handleLogOut = e => {
           setMe()
@@ -19,16 +18,25 @@ function Header (){
     return(
         
        <header>
-       <div className="logo"></div>
-        
+    
+        <div className="logo-titulo">
+            <div className="logo"></div>   
+            
+            <div className="titulo-w">
+                <label className="nombre-web">Brain</label>
+                <label className="nombre-web2">Ask</label>
+                <label className="slogan">Conectados a la nube del programador</label>
+            </div>
+       </div>
+               
        {me && 
        <>
                
        <div className="user">
            <div className="photo" style={photoStyle}/>
            <div className="nombre">{me.login}</div>
-           <Link to="/user/editar-perfil"><button className="e">perfil</button></Link>
-           <button onClick={handleLogOut}>Cerrar cesion</button>
+           <Link to="/user/editar-perfil"><label className="e">perfil</label></Link>
+           <label onClick={handleLogOut}>Cerrar cesion</label>
        </div>
         </>     
        }    

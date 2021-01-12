@@ -3,11 +3,20 @@
     border-radius: 15px;
     margin: 10px;
     padding: 20px;
-    height: 420px;
+    height: 450px;
     width: 420px;
     background-color: darksalmon;
     margin: auto;
-    margin-top: 15vh;
+    margin-top: 18vh;
+}
+
+.photo-user{
+  background-position: center center;
+  background-size: cover;
+  border: 1px solid black;
+  height: 32px;
+  margin-right: 8px;
+  width: 32px;
 }
   
 .edit label {
@@ -22,15 +31,20 @@
     border-radius: 6px;
     border: 1px solid black;
     margin-bottom: 12px;
+    
+}
+
+#i{
+    opacity: 0.1;
+    
 }
 
 .edit button {
     background-color: lawngreen;
-    margin-top: 20px;
-    margin-top: 30px;
+    margin-top: 10px;
+    
     margin-bottom: 5px;
-    margin-top: 30px;
-    margin-bottom: 5px;
+       
     cursor: pointer;
     outline: 1;
     padding: 8px 15px;
@@ -44,7 +58,7 @@
 }
 
 .volver{
-    margin-top: 30px;
+    margin-top: 40px;
     text-align: center;
    
 }

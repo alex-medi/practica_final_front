@@ -14,7 +14,7 @@ function AnswerViewer() {
  
   return (
     <>
-      <h4>Respuesta</h4>
+      <h3>Respuestas</h3>
       <ul className="respuesta-lista">
         {respuestas && respuestas.map(respuesta =>
         

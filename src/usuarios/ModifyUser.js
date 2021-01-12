@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import './modifyuser.css';
 import { edit } from '../api'
 import { useUser, useSetUser } from './UserContext';
@@ -8,13 +8,17 @@ function ModifyUser() {
   const me = useUser();
   const setMe = useSetUser();
   const history = useHistory();
+  const theInput = useRef();
 
-  const [login, setLogin] = useState(me && me.login || '');
+  const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
-  const [experto, setExperto] = useState('si');
-  const [empresa, setEmpresa] = useState(me && me.empresa || '');
+  const [experto, setExperto] = useState(me.experto === 1 ? 'si' : me.experto === 0 ? 'no' : '');
+  const [empresa, setEmpresa] = useState('');
   if (!me) return <Redirect to="/user/acceso" />
-
+  
+  const handlePick = e =>{
+    theInput.current.click()
+  }
 
   const handleSubmit = async e => {
     e.preventDefault()
@@ -34,7 +38,7 @@ function ModifyUser() {
     
   }
 
-  const photoStyle = me && me.imagen && { backgroundImage: '../tutorias-api/images/'+ me.imagen}
+  const photoStyle = me && me.imagen && { backgroundImage: 'url(' + me.imagen +')'}
   
   return (
     <div className="edit">
@@ -51,8 +55,9 @@ function ModifyUser() {
           <label className="user-image">
             <span>Cambiar foto de perfil</span>
             <div className="value">
-              <div className="photo" style={photoStyle} />
-              <input name="imagen" type="file" accept="image/*" />
+              <div className="photo-user" style={photoStyle} onClick={handlePick}/>
+              <input id="i" name="imagen" type="file" accept="image/*" ref={theInput}/>
+              
 
             </div>
           </label>
@@ -70,8 +75,14 @@ function ModifyUser() {
           <input type="password" value={password} onChange={e => setPassword(e.target.value)} />
           </label>
           <label>
-            experto:
+            Nivel actual:
+            <label className="alinear">{me.experto === 1 ?'experto':'usuario'}</label>
+          </label>
+                      
+          <label>
+            Experto:
           <select className="alinear" value={experto} onChange={e => setExperto(e.target.value)}>
+              <option value="" hidden>Selecciona...</option>
               <option value="si">Si</option>
               <option value="no">No</option>
             </select>

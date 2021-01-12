@@ -5,8 +5,8 @@
     padding: 20px;
     position: relative;
     text-align: center;
-    height: 375px;
-    width: 340px;
+    height: 420px;
+    width: 315px;
     background-color: darkcyan;
     margin: auto;
     margin-top: 14%;
@@ -34,9 +34,7 @@
   }
       
   .registro button {
-    margin-top: 30px;
-    margin-bottom: 5px;
-    margin-top: 30px;
+    margin-top: 5px;
     margin-bottom: 5px;
     cursor: pointer;
     outline: 1;

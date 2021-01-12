@@ -13,15 +13,19 @@ function QuestionViewer() {
     const { idPregunta } = useParams()
     const pregunta = usePreguntaById(idPregunta)
     const [key, setKey] = useState(1)
-    const photoStyle = pregunta && pregunta.captura && { backgroundImage: 'url(' + pregunta.captura + ')' }
-    console.log(pregunta)
+        
     if (!pregunta) return 'Cargando'
     return (
         <div className="question-answer">
             <div className="question-vista">
             <h4>{pregunta.titulo}</h4>
             <article>{pregunta.cuerpo}</article>
-            <div className="captura" style={photoStyle} />
+
+            {pregunta.captura &&
+            <div className="captura-wrapper">
+            <img className="captura" src={pregunta.captura} />
+            </div>
+            }
             <div className="card-data">
                 <div>
                     <label>Consultado por:<label className="separacion"> ''</label></label>

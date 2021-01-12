@@ -25,7 +25,7 @@ function Respuestas({ reload }) {
 
   return (
     <div className="respuesta">
-      <h4>Responder pregunta</h4>
+      <h4>Responder</h4>
       <form onSubmit={handleSubmit}>
         <label>
           Describir respuesta

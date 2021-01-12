@@ -1,16 +1,27 @@
 import './answeritem.css';
+import AddRating from './AddRating';
+import { useRespuestaById } from '../api';
+import { useParams } from 'react-router-dom';
 
 const moment = require('moment');
 
 function AnswerItem({ respuesta }) {
 
-  const photoStyle = respuesta.captura && { backgroundImage: 'url(' + respuesta.captura + ')' }
+  const selectedAnswer = parseInt(useParams().idRespuesta || "1")
+  const respuestas = useRespuestaById(selectedAnswer)
+
+  //const photoStyle = respuesta.captura && { backgroundImage: 'url(' + respuesta.captura + ')' }
+
   return (
     <ul className="answer-list">
     <li>
       <>
         <div className="descripcion">{respuesta.descripcion}</div>
-        <div className="captura2" style={photoStyle} />
+        {respuesta.captura &&
+          <div className="captura2-wrapper">
+            <img className="captura2" src={respuesta.captura} />
+          </div>
+        }
         <div className="card-datos2">
         <div>
           <label>Respondido por:<label className="separacion"> ''</label></label> 
@@ -22,8 +33,17 @@ function AnswerItem({ respuesta }) {
         <div>
           <div className="puntuacion">
             Puntuacion:
-              <label >{respuesta.rating}</label>
+              
+              {respuesta.rating >= 1 && '⭐'}
+              {respuesta.rating >= 2 && '⭐'}
+              {respuesta.rating >= 3 && '⭐'}
+              {respuesta.rating >= 4 && '⭐'}
+              {respuesta.rating >= 5 && '⭐'}
+
           </div>
+        </div>
+        <div>
+          <AddRating />
         </div>
 
       </>

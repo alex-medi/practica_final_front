@@ -4,13 +4,14 @@ header {
   box-shadow: 5px 0 8px rgba(0, 0, 0, 0.4);
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   margin-bottom: 15px;
   padding: 3px 15px;
-  height: 92px;
+  height: 82px;
   width: 100%;
   position: fixed;
 }
+
 
 .logo{
   background-image: url(./imagenes/cloud.png);
@@ -21,12 +22,41 @@ header {
   margin-left: 28px;
 }
 
+.logo-titulo{
+  display: flex;
+  flex: 1 1 auto;
+}
+
+.titulo-w{
+  flex: 1 1 auto;
+  
+}
+
+.nombre-web{
+  color: deeppink;
+  font: bold;
+  font-size: 52px;
+}
+
+.nombre-web2{
+  color: orange;
+  font: bold;
+  font-size: 52px;
+}
+
+.slogan{
+  color: coral;
+  margin-left: 30px;
+  
+}
+
+
 header .e {
   cursor: pointer;
   margin-right: 10px;
   margin-left: 30px;
-  border-radius: 15px;
-  background-color: goldenrod;
+  color: goldenrod;
+  font-size: 12px;
 }
 
 header .user {
@@ -55,11 +85,11 @@ header .photo {
 
 
 
-.user > button{
+.user > label{
   cursor: pointer;
-  margin-left: 30px;
-  border-radius: 15px;
-  background-color: goldenrod;
+  margin-left: 10px;
+  color: goldenrod;
+  font-size: 12px;
 }
 
 
