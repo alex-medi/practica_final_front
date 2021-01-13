@@ -1,7 +1,15 @@
 
 .review{
-    margin-bottom: 90px;
+    margin-bottom: 70px;
     margin-top: 20px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid black;
+    width: 700px;
+    margin-left: -100px;
+}
+
+.votar{
+    margin-left: 95px;
 }
 
 .estrella{

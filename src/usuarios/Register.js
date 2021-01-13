@@ -40,10 +40,12 @@ function Register() {
   return (
     <div className="registro">
       <form onSubmit={handleSubmit}>
-           <label>
+           <div className="foto">
+           <label className>
            Añadir foto
           <input name="imagen" placeholder="foto de perfil" className="photo" type="file" accept="image/*" />
-          </label>       
+          </label>
+          </div>       
           <input placeholder="nombre" value={username} onChange={e => setUsername(e.target.value)} />
                
          <input placeholder="email" type="email" value={email} onChange={e => setEmail(e.target.value)} />

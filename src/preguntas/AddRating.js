@@ -20,6 +20,7 @@ function AddRating() {
     return (
       <div className="review">
         <form onSubmit={handleSubmit}>
+          <div className="votar">
         <label>
             Añadir valoracion
             <select className="estrella" value={score} onChange={e => setScore(e.target.value)}>
@@ -32,9 +33,10 @@ function AddRating() {
   
             </select>
           </label>
+         
                             
           <button>Valorar</button>
-          
+          </div>
         </form>
       </div>
     );

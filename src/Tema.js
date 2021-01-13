@@ -11,7 +11,7 @@ function Tema (){
     return(
        <div className='tematicas'>
 
-           <h4>Temáticas</h4>
+           <h3>Temáticas</h3>
 
            <ul className='tematic-column'>
                {etiquetas && etiquetas.map(etiqueta =>
@@ -26,9 +26,9 @@ function Tema (){
 
            </ul>
 
-           <>
+           <div className="return">
            <Link to="/">Volver a inicio</Link>
-           </>
+           </div>
        </div>
 
     )

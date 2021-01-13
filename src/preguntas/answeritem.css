@@ -1,9 +1,9 @@
 
 .answer-list{
     list-style: none;
-   
+    padding-top: 30px;
     width: 580px;
-    margin-left: -60px;
+    margin-left: 180px;
    
 }
 
@@ -31,7 +31,8 @@
 }
 
 .puntuacion{
-    margin-top: 40px;
+    margin-top: 20px;
+    
         
 }
 

@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
 
 .nueva{
   cursor: pointer;
@@ -5,11 +6,22 @@
   margin-bottom: 40px;
   border-radius: 15px;
   background-color: dodgerblue;
+  font: bold;
 }
 
 .buscador{
   position: fixed;
-  margin-left: -280px;
+  margin-left: -240px;
+}
+
+.resultados > h4{
+   font-family: 'Oswald', Arial, Helvetica, sans-serif;
+   font-size: 18px;
+}
+
+.resultado{
+  font-family: Arial, Helvetica, sans-serif;
+  color: dodgerblue
 }
 
 

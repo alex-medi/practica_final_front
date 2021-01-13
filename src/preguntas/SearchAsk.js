@@ -51,7 +51,9 @@ function SearchAsk() {
                     resultados.map(pregunta =>
 
                         <Link to={'/temas/' + pregunta.id_tematica + '/pregunta/' + pregunta.id}>
+                            <div className="resultado">
                             <h4>{pregunta.titulo}</h4>
+                            </div>
                         </Link>
                     ): 'tu busqueda no obtuvo resultados'}
 

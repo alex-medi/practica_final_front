@@ -13,8 +13,13 @@
   }
  
   .question-answer{
-    margin-left: -60px;
-    width: 580px;
+    margin-left: -110px;
+    width: 620px;
+    font-family: Helvetica;
+  }
+
+  .question-vista > h4{
+      font-size: 18px;
   }
 
   .question-vista{
@@ -23,4 +28,9 @@
 
   .card-data{
     text-align: right;
+    margin-right: 80px;
   }
+
+  
+    
+  

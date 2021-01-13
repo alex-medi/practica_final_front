@@ -4,8 +4,6 @@ import { useUser } from '../usuarios/UserContext';
 import { useParams } from 'react-router-dom';
 import AskItem from './AskItem';
 
-const moment = require('moment');
-
 function AskViewer() {
 
     const me = useUser()

@@ -10,8 +10,9 @@
     background-color: darkcyan;
     margin: auto;
     margin-top: 14%;
+    
   }
-
+     
   .registro input:not([type="file"]) {
     border-radius: 15px;
     border: 1px solid black;
@@ -31,6 +32,8 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
   }
       
   .registro button {

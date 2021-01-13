@@ -1,17 +1,14 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
 
-
-.todas{
-    margin-bottom: 80px;
+.r{
     font-family: 'Oswald', Arial, Helvetica, sans-serif;
     font-size: 32px;
-    margin-left: -92px;
+    margin-bottom: 40px;
+    
 }
 
-.pregunta-lista{
+.respuesta-lista{
     border-top: 1px solid black;
-    width: 590px;
-    margin-left: -230px;
+    margin-left: -240px;
     
 }

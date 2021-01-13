@@ -1,8 +1,22 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300&display=swap');
+
+
+.tematicas > h3{
+  font-family: 'Oswald', sans-serif;
+  font: bold;
+  font-size: 24px;
+  margin-top: -12px;
+}
+
 .tematic-column{
+  
   cursor: pointer;
   list-style: none;
-  justify-content: space-between;
-  
+  margin-top: -12px;
+  font-family: 'Teko', sans-serif;
+  font-size: 22px;
 }
 
 .tematic-column > li > a{
@@ -11,12 +25,16 @@
 }
 
 .tematic-column > li{
-  padding-bottom: 12px;
+  padding-bottom: 3px;
 }
 
  .active{
     text-shadow: 2px 2px 2px silver;
     font-weight: bold;
-    font-size: 17px;   
+    font-size: 26px;   
+}
+
+.return{
+  margin-top: -16px;
 }
 

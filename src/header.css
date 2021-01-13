@@ -1,3 +1,9 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap');
+
+
 header {
   background-color: midnightblue;
   border-bottom: 2px solid black;
@@ -29,22 +35,26 @@ header {
 
 .titulo-w{
   flex: 1 1 auto;
-  
+  margin-top: 5px;
 }
 
 .nombre-web{
   color: deeppink;
+  font-family: 'Bungee',sans-serif; 
   font: bold;
   font-size: 52px;
 }
 
 .nombre-web2{
   color: orange;
+  font-family: 'Bungee',sans-serif; 
   font: bold;
   font-size: 52px;
 }
 
 .slogan{
+  font-family: 'East Sea Dokdo', Arial, Helvetica, sans-serif;
+  font-size: 32px;
   color: coral;
   margin-left: 30px;
   
@@ -56,7 +66,7 @@ header .e {
   margin-right: 10px;
   margin-left: 30px;
   color: goldenrod;
-  font-size: 12px;
+  
 }
 
 header .user {
@@ -64,11 +74,15 @@ header .user {
   display: flex;
   align-items: center;
   margin-right: 40px;
+  font-family: 'Yusei Magic', Arial, Helvetica, sans-serif;
+  font-size: 16px;
 }
 
 .user .nombre{
-  color: goldenrod;
+  font-family: Helvetica, sans-serif;
+  color: bisque;
   font: bold;
+  margin-top: 3px;
 }
 
 header .photo {
@@ -89,7 +103,7 @@ header .photo {
   cursor: pointer;
   margin-left: 10px;
   color: goldenrod;
-  font-size: 12px;
+  
 }
 
 

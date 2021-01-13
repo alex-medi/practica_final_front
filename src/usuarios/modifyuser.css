@@ -1,13 +1,14 @@
 .edit {
     border: 2px solid black;
     border-radius: 15px;
-    margin: 10px;
+    
     padding: 20px;
     height: 450px;
     width: 420px;
     background-color: darksalmon;
     margin: auto;
     margin-top: 18vh;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .photo-user{
@@ -58,13 +59,15 @@
 }
 
 .volver{
-    margin-top: 40px;
+    margin-top: 20px;
     text-align: center;
-   
+      
 }
 
 .vuelve {
     transition: color 1s ease-out;
+    color: darkblue;
+    font: bold;
 }
 
 
@@ -73,7 +76,7 @@
 }
 
 .alinear{
-    margin-right: 130px;
+    margin-right: 82px;
 }
 .invariable{
     margin-right: 130px;

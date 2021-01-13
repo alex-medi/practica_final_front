@@ -1,17 +1,13 @@
 import './answeritem.css';
 import AddRating from './AddRating';
-import { useRespuestaById } from '../api';
-import { useParams } from 'react-router-dom';
+
+import { Link } from 'react-router-dom';
 
 const moment = require('moment');
 
-function AnswerItem({ respuesta }) {
-
-  const selectedAnswer = parseInt(useParams().idRespuesta || "1")
-  const respuestas = useRespuestaById(selectedAnswer)
-
-  //const photoStyle = respuesta.captura && { backgroundImage: 'url(' + respuesta.captura + ')' }
-
+function AnswerItem({ pregunta, respuesta }) {
+    
+  
   return (
     <ul className="answer-list">
     <li>
@@ -43,6 +39,9 @@ function AnswerItem({ respuesta }) {
           </div>
         </div>
         <div>
+         
+          <h4>Puntuar</h4>
+          
           <AddRating />
         </div>
 

@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
 .page-home{
     background-image: url(./imagenes/banner_img.png);
     background-position: center ;
@@ -19,6 +22,8 @@
 h1{
     color: goldenrod;
     margin-bottom: 100px;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-size: 36px;
 }
 
 .introduccion{
@@ -27,7 +32,8 @@ h1{
     margin-bottom: 70px;
     margin-left: 65vh;
     margin-right: 65vh;
-    
+    font-family: 'Lobster', Arial, Helvetica, sans-serif;
+    text-align: center;
 }
 
 .enlaces{
@@ -37,16 +43,17 @@ h1{
 }
 
  .enlaces>button{
-    background-color: yellowgreen;
+    background-color: goldenrod;
     border-radius: 15px;
     font-size: 20px;
     transition: background-color 1s ease-out;
     transition: font-size, 1s ease-out;
     
+    
 }
 
 .enlaces>button:hover{
-    background: orange;
+    background: crimson;
     font-size: 21px;
 }
 

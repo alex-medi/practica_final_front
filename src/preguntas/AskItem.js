@@ -4,14 +4,14 @@ const moment = require('moment');
 
 function AskItem({pregunta, isExperto, selectedTema}) {
          
-        //const photoStyle = pregunta.captura && { backgroundImage: 'url(' + pregunta.captura + ')' }
+        
         return (
             
             <ul className="ask-list">
             <li className={selectedTema === pregunta.id_tematica}>
                 <>
                     <Link to={'/temas/' + pregunta.id_tematica + '/pregunta/' + pregunta.id}>
-                        <h4>{pregunta.titulo}</h4>
+                        <h3>{pregunta.titulo}</h3>
                     </Link>
                     <div>
                         <article>{pregunta.cuerpo}</article>
