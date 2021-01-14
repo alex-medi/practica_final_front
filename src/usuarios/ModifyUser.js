@@ -8,16 +8,21 @@ function ModifyUser() {
   const me = useUser();
   const setMe = useSetUser();
   const history = useHistory();
-  const theInput = useRef();
+  const imageInput = useRef();
 
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
   const [experto, setExperto] = useState(me.experto === 1 ? 'si' : me.experto === 0 ? 'no' : '');
   const [empresa, setEmpresa] = useState('');
+  const [imageOverride, setImageOverride] = useState();
   if (!me) return <Redirect to="/user/acceso" />
-  
-  const handlePick = e =>{
-    theInput.current.click()
+   
+
+  const handleImage = e => {
+    if (e.target.files.length) {
+      const url = URL.createObjectURL(e.target.files[0])
+      setImageOverride(url)
+    }
   }
 
   const handleSubmit = async e => {
@@ -38,7 +43,8 @@ function ModifyUser() {
     
   }
 
-  const photoStyle = me && me.imagen && { backgroundImage: 'url(' + me.imagen +')'}
+  const ruta = imageOverride || (me && me.imagen)
+  const photoStyle = ruta && { backgroundImage: 'url(' + ruta +')'}
   
   return (
     <div className="edit">
@@ -53,17 +59,17 @@ function ModifyUser() {
           <label className="invariable">{me.email}</label>
           </label>
           <label className="user-image">
-            <span>Cambiar foto de perfil</span>
+            <span className="change">Cambiar foto de perfil</span>
             <div className="value">
-              <div className="photo-user" style={photoStyle} onClick={handlePick}/>
-              <input id="i" name="imagen" type="file" accept="image/*" ref={theInput}/>
+              <div className="photo-user" style={photoStyle}/>
+              <input id="i" name="imagen" type="file" accept="image/*" ref={imageInput} onChange={handleImage}/>
               
 
             </div>
           </label>
-          <label>
+          <label className="actual">
             Nombre de usuario actual:
-          <label className="alinear">{me.login}</label>
+          <label className="actual-user">{me.login}</label>
           </label>
           <label>
             Nuevo nombre de usuario:
@@ -74,20 +80,20 @@ function ModifyUser() {
             Introducir nueva contraseña:
           <input type="password" value={password} onChange={e => setPassword(e.target.value)} />
           </label>
-          <label>
+          <label className="actual">
             Nivel actual:
-            <label className="alinear">{me.experto === 1 ?'experto':'usuario'}</label>
+            <label className="nivel">{me.experto === 1 ?'experto':'usuario'}</label>
           </label>
                       
           <label>
             Experto:
-          <select className="alinear" value={experto} onChange={e => setExperto(e.target.value)}>
+          <select className="expert" value={experto} onChange={e => setExperto(e.target.value)}>
               <option value="" hidden>Selecciona...</option>
               <option value="si">Si</option>
               <option value="no">No</option>
             </select>
           </label>
-          <label>
+          <label className="actual">
             Empresa actual:
           <label className="alinear">{me.empresa}</label>
           </label>

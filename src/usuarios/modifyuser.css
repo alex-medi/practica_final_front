@@ -15,9 +15,10 @@
   background-position: center center;
   background-size: cover;
   border: 1px solid black;
-  height: 32px;
-  margin-right: 8px;
-  width: 32px;
+  height: 50px;
+  margin-right: 135px;
+  width: 50px;
+  cursor: pointer;
 }
   
 .edit label {
@@ -36,22 +37,24 @@
 }
 
 #i{
-    opacity: 0.1;
-    
+    opacity: 0.001;
+    height: 1px;
+    width: 1px;
+}
+
+.change{
+    margin-top: 20px;
 }
 
 .edit button {
     background-color: lawngreen;
-    margin-top: 10px;
-    
-    margin-bottom: 5px;
-       
+    margin-bottom: 10px;
     cursor: pointer;
     outline: 1;
     padding: 8px 15px;
     width: 100%;
     border-radius: 15px;
-    transition: background-color 2s ease-out;
+    transition: background-color 1s ease-out;
 }
 
 .edit button:hover{
@@ -75,9 +78,22 @@
      color: red;
 }
 
-.alinear{
-    margin-right: 82px;
+.expert{
+    margin-right: 85px;
 }
+
+.alinear{
+    margin-right: 30px;
+    
+}
+.actual-user{
+    margin-right: 75px;
+}
+.nivel{
+    margin-right: 130px;
+
+}
+
 .invariable{
     margin-right: 130px;
 }

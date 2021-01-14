@@ -10,8 +10,6 @@ export const useRespuestaByIdP = (id) => useFetch('http://localhost:8080/api/res
 
 export const usePreguntaById = (id) => useFetch('http://localhost:8080/api/preguntaId/'+ id)
 
-export const useRespuestaById = (id) => useFetch('http://localhost:8080/api/respuestaId/'+ id)
-
 export const buscar = async (clave) => {
   const ret = await fetch('http://localhost:8080/api/pregunta/' + clave)
   const data = await ret.json()

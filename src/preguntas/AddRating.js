@@ -4,17 +4,17 @@ import { useParams, Redirect } from 'react-router-dom';
 import { puntuar } from '../api';
 import './addrating.css';
 
-function AddRating() {
+function AddRating({id, reload}) {
  
     const [score, setScore] = useState('')
          
     const me = useUser();
-    const selectedAnswer = parseInt(useParams().idRespuesta)
+    
     if (!me) return <Redirect to="/user/acceso" />
     const handleSubmit = async e => {
       e.preventDefault()
-      await puntuar(selectedAnswer, score, me.token);
-      
+      await puntuar(id, score, me.token);
+      reload()
    }
   
     return (

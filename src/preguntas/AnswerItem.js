@@ -1,11 +1,9 @@
 import './answeritem.css';
 import AddRating from './AddRating';
 
-import { Link } from 'react-router-dom';
-
 const moment = require('moment');
 
-function AnswerItem({ pregunta, respuesta }) {
+function AnswerItem({respuesta, reload }) {
     
   
   return (
@@ -42,7 +40,10 @@ function AnswerItem({ pregunta, respuesta }) {
          
           <h4>Puntuar</h4>
           
-          <AddRating />
+          <AddRating 
+            id={respuesta.id}
+            reload={reload}
+          />
         </div>
 
       </>

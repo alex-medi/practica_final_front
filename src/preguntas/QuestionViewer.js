@@ -36,7 +36,7 @@ function QuestionViewer() {
             </div>
             {me &&
                 <div className="ver-respuesta">
-                    <AnswerViewer key={key} />
+                    <AnswerViewer key={key} reload={() => setKey(key + 1)} />
                 </div>
             }
             {me &&

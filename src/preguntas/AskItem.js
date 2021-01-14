@@ -14,7 +14,7 @@ function AskItem({pregunta, isExperto, selectedTema}) {
                         <h3>{pregunta.titulo}</h3>
                     </Link>
                     <div>
-                        <article>{pregunta.cuerpo}</article>
+                        <article className="cuerpo-pregunta">{pregunta.cuerpo}</article>
                         
                         <div className="card-datos">
                             <div>

@@ -2,17 +2,17 @@ import { useRespuestaByIdP } from '../api'
 import AnswerItem from './AnswerItem'
 import { useParams, Redirect } from 'react-router-dom';
 import { useUser } from '../usuarios/UserContext';
-import { useRespuestaById } from '../api';
+
 import './answerviewer.css';
 
-function AnswerViewer() {
+function AnswerViewer({ reload }) {
   const me = useUser()
 
   const selectedQuestion = parseInt(useParams().idPregunta || "1")
-  const selectedAnswer = parseInt(useParams().idRespuesta || "1")
+  
 
   const respuestas = useRespuestaByIdP(selectedQuestion)
-  const respuestaElegida = useRespuestaById(selectedAnswer)
+  
   if (!me) return "Para poder ver las respuestas, registrate!",<Redirect to="/user/acceso" />
   if (!respuestas || respuestas.error) return null
  
@@ -26,6 +26,7 @@ function AnswerViewer() {
            
         respuesta={respuesta}
         key={respuesta.id}
+        reload={reload}
         
         />
 

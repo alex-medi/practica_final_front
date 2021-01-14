@@ -9,6 +9,17 @@
   .ask-list h3{
     font-family: Arial, Helvetica, sans-serif;
     color: dodgerblue;
+    transition: text-decoration;
+  }
+
+  .ask-list h3:hover{
+    text-decoration:underline
+  }
+
+  .cuerpo-pregunta{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+
   }
 
   .responder{
@@ -17,13 +28,22 @@
     margin-bottom: 16px;
     background-color: limegreen;
     color: black;
+    width: 90px;
+    height: 30px;
   }
 
   .card-datos{
     padding: 5px 6px 7px 7px;
     text-align: right;
     margin-top: 20px;
-        
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;    
+  }
+
+  .descripcion{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;   
+
   }
 
   .fecha{
