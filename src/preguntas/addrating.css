@@ -10,6 +10,11 @@
     font-size: 14px;
 }
 
+.review button{
+    border-radius: 4px;
+    margin-left: 5px;
+}
+
 .votar{
     margin-left: 95px;
 }

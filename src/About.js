@@ -1,5 +1,8 @@
 import { Link } from 'react-router-dom';
 import './about.css';
+import logo from './imagenes/registrate.png';
+import logo2 from './imagenes/lenguaje_programacion.png';
+import logo3 from './imagenes/programadora.jpg'
 
 function About() {
              
@@ -19,18 +22,29 @@ function About() {
 
         <section className="padre">
           <div className="informacion">
-            <img className="registrate"></img>
-            <h4></h4>
+            <img  src={logo} />
+            <strong>Registrate</strong>
+            <p>Los usuarios registrados cuentan con la ventaja de leer las respuestas y puntuarlas
+              si les son de utilidad. Además de poder formular nuevas preguntas. únete a esta
+              gran comunidad. </p>
 
           </div>
           <div className="informacion">
-          <img className="materias"></img>
-          <h4></h4>
+          <img  src={logo2} />
+          <strong>Multilenguaje</strong>
+          <p>Nuestra web cuenta con una amplia variedad de lenguajes de programación. Así
+            los usuarios pueden resolver sus cuestiones en el lenguaje de progrmación 
+            que estan estudiando o manejando.
+          </p>
 
           </div>
           <div className="informacion">
-          <img className="expertos"></img>
-          <h4></h4>
+          <img src={logo3} />
+          <strong>Profesionales</strong>
+          <p>Contamos con una amplia variedad de profesionales, cada uno experto en su lenguaje de
+            programación, que podrá resolver de forma clara consisa cualquier duda planteada por los
+            usuarios.
+          </p>
 
           </div>
 

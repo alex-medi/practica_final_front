@@ -37,9 +37,7 @@ function AnswerItem({respuesta, reload }) {
           </div>
         </div>
         <div>
-         
-          <h4>Puntuar</h4>
-          
+                        
           <AddRating 
             id={respuesta.id}
             reload={reload}
