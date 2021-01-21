@@ -66,7 +66,30 @@ header .e {
   margin-right: 10px;
   margin-left: 30px;
   color: goldenrod;
+  text-decoration: none;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 2px;
+  transition: background-size .3s;
   
+}
+
+header .e:hover, header .e:focus{
+  background-size: 100% 2px;
+}
+
+.closed{
+  text-decoration: none;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 2px;
+  transition: background-size .3s;
+}
+
+.closed:hover, .closed:focus{
+  background-size: 100% 2px;
 }
 
 header .user {

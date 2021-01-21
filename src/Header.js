@@ -36,7 +36,7 @@ function Header (){
            <div className="photo" style={photoStyle}/>
            <div className="nombre">{me.login}</div>
            <Link to="/user/editar-perfil"><label className="e">perfil</label></Link>
-           <label onClick={handleLogOut}>Cerrar cesion</label>
+           <label className="closed" onClick={handleLogOut}>Cerrar cesion</label>
        </div>
         </>     
        }    

@@ -36,7 +36,7 @@ function Respuestas({ reload }) {
             <span>Añadir captura</span>
             <div className="value">
               
-              <input name="captura3" type="file" accept="image/*" />
+              <input name="captura" type="file" accept="image/*" />
 
             </div>
           </label>

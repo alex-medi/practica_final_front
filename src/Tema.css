@@ -20,15 +20,19 @@
 }
 
 .tematic-column > li > a{
-  
   color: black;
+  transition: background-color;
+}
+
+.tematic-column > li > a:hover{
+   background-color: cyan;
 }
 
 .tematic-column > li{
   padding-bottom: 3px;
 }
 
- .active{
+.active{
     text-shadow: 2px 2px 2px silver;
     font-weight: bold;
     font-size: 26px;   
